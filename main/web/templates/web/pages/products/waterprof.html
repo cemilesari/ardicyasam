@@ -1,0 +1,149 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{% trans "Waterproof Konnektörler" %}{% endblock title %}
+{% block extracss %}
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/aside.css' %}">
+
+{% endblock extracss %}
+{% block content %}
+<div class="page-content">
+        
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper" style="background-image:url({{STATIC_URL}}web/images/urunlerimiz.jpg);">
+            	<div class="overlay-main bg-black opacity-07"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <h1 class="text-white">Waterproof Konnektörler</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+            
+            <!-- BREADCRUMB ROW -->                            
+            <div class="bg-gray-light p-tb20">
+            	<div class="container">
+                    <ul class="wt-breadcrumb breadcrumb-style-2">
+                        <li><a href="/"><i class="fa fa-home"></i> Ana Sayfa</a></li>
+                        <li>Waterproof Konnektörler</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- BREADCRUMB ROW END -->
+            
+            <!-- SECTION CONTENT START -->
+            <div class="section-full p-t80 p-b50">
+                <div class="container">
+                    <div class="section-content">
+                    	<div class="row">
+                            <!-- SIDE BAR START -->
+                            <div class="col-md-4">
+                                <aside class="side-bar">
+                                    <div class="widget bg-white  recent-posts-entry">
+                                        <div class="p-b10">
+                                            <h2 class="text-uppercase">ÜRÜN KATEGORİLERİ</h2>
+                                                <div class="wt-separator-outer m-b30">
+                                                    <div class="wt-separator style-square">
+                                                        <span class="separator-left bg-primary"></span>
+                                                        <span class="separator-right bg-primary"></span>
+                                                    </div>
+                                                </div>
+                                            </div>       
+                                            <div class="section-content">
+                                               <div class="sidenav">
+                                            <a clas="active" href="{% url 'web:per_view' %}" style="background-color:#d2242a;color:#fff;">TÜM ÜRÜNLERİMİZ</a>
+                                            
+                                            <button class="dropdown-btn active" style="background-color:#d2242a;margin-top: 10px;color:#fff;">DIŞ ORTAM 
+                                                <i class="fa fa-caret-down"></i>
+                                            </button>
+                                            <div class="dropdown-container" >
+                                                <a href="{% url 'web:dis_cadde' %}">Cadde Aydınlatması</a>
+                                                <a  href="{% url 'web:linner_led' %}">Lineer LedTube Volans</a>
+                                                <a href="{% url 'web:dot-led-scorpius' %}">Dot Led Scorpius</a>
+                                                <a href="{% url 'web:projector' %}">Projector</a>
+                                                <a href="{% url 'web:el-feneri' %}">El Feneri</a>
+                                                <a href="{% url 'web:park' %}">Park Bahçe Aydınlatması</a>
+                                                <a href="{% url 'web:wallwasher' %}">Wallwasher</a>
+                                                <a href="{% url 'web:mobil-isik-kulesi' %}">Mobil Işık Kulesi</a>
+                                                <a  href="{% url 'web:arac-ustu-isik-kulesi' %}">Araç Üstü Işık Kulesi</a>
+                                                <a href="{% url 'web:ufled' %}">Portatif Alan Aydınlatması UFLED</a>
+                                                <a href="{% url 'web:ybtsed' %}">Modüler Led Aydınlatma Seti YBT</a>
+                                                <a href="{% url 'web:dek-led-ampul' %}">Dekoratif Led Ampül</a>
+                                                <a  href="{% url 'web:aksesuarlar' %}">Aksesuarlar</a>
+                                                
+                                            </div>
+                                               <button class="dropdown-btn" style="background-color:#d2242a;margin-top: 10px;color:#fff;">İÇ ORTAM 
+                                                <i class="fa fa-caret-down"></i>
+                                            </button>
+                                            <div class="dropdown-container">
+                                                <a href="{% url 'web:dek-led-ampul-ic' %}">Dekoratif Led Ampül</a>
+                                                <a href="{% url 'web:yuk-tav-led' %}">Yüksek Tavan Led Aydınlatması</a>
+                                                <a href="{% url 'web:dek-led-ayd-seti' %}">Dekoratif Led Aydınlatma Seti</a>
+                                            </div>
+                                               <button class="dropdown-btn" style="background-color:#d2242a;margin-top: 10px;color:#fff;">YARDIMCI ÜRÜNLER
+                                                <i class="fa fa-caret-down"></i>
+                                            </button>
+                                            <div class="dropdown-container" style="display:block;">
+                                                <a href="{% url 'web:cobled' %}">COB LED Modül Armekeddon</a>
+                                                <a style="color:#d2242a;" href="{% url 'web:waterprof' %}">Waterproof Konnektörler</a>
+                                                <a    href="{% url 'web:waterprofener' %}">Waterproof Enerji Dağıtıcı</a>
+                                            </div>
+                                            </div>
+                                            </div>
+                                   </aside>
+                                </div>
+                            <!-- SIDE BAR END --> 
+                            <div class="col-md-8"> 
+                                <!-- TITLE START -->
+                                <div class="p-b10">
+                                    <h2 class="text-uppercase">Waterproof Konnektörler</h2>
+                                    <div class="wt-separator-outer m-b30">
+                                        <div class="wt-separator style-square">
+                                            <span class="separator-left bg-primary"></span>
+                                            <span class="separator-right bg-primary"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <!-- COLUMNS 1 -->
+                                    {% for prod in  pro %}
+                                    <div class="col-md-4 col-sm-4 col-xs-6 col-xs-100pc m-b30">
+                                        <div class="wt-box wt-product-box">
+                                            <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom">
+                                             <a href="{% url 'web:per_detail_view' prod.slug %}">   <img src="{{prod.image.url}}" alt=""></a>
+                                            </div>
+                                            <div class="wt-info  text-center">
+                                                 <div class="p-a10 bg-white">
+                                                    <h4 class="wt-title">
+                                                        <a href="{% url 'web:per_detail_view' prod.slug %}">{{prod.title}}</a>
+                                                    </h4>
+                                                    <span class="price">
+                                                       
+                                                    </span>
+                                                    <div class="p-t10">
+                                                        <a href="{% url 'web:per_detail_view' prod.slug %}" class="site-button  m-r15" type="button">İncele  
+                                                        <i class="fa fa-angle-double-right"></i></a>
+                                                    </div>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   {% endfor %}                            
+                                </div>
+                            </div>
+                            {% include "web/includes/paginate.html" with page_obj=bloglist_tr %}
+
+                       </div> 
+                   </div>
+                 </div>
+             </div>
+             <!-- SECTION CONTENT END -->
+
+        </div>
+        {% include 'web/includes/contacttr.html' %}
+
+{% endblock content %}
+{% block extrajs %}
+
+<script type="text/javascript"  src="{% static  'web/js/aside.js' %}"></script>
+
+{% endblock extrajs %}

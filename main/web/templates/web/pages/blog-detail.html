@@ -1,0 +1,47 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{{blog.titlesite}}{% endblock title %}
+{% block meta %}
+<meta name="description" content="{{blog.description}}">
+<meta name="keywords" content="{% for cer in blog.keywords.all %}{{cer.name}},{% endfor %}">
+{% endblock meta %}{% block extracss %}{% endblock extracss %}
+{% block content %}
+<div class="page-content">
+    <div class="wt-bnr-inr overlay-wraper" style="background-image:url('{{blog.bannerimage.url}}');">
+        <div class="overlay-main bg-black opacity-07"></div>
+        <div class="container">
+            <div class="wt-bnr-inr-entry">
+                <h1 class="text-white">{{blog.bannertitle}}</h1>
+                <p style="color:#fff;">{{blog.banner}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray-light p-tb20">
+        <div class="container">
+            <ul class="wt-breadcrumb breadcrumb-style-2">
+                <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+                <li>{{blog.title}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-full p-t80 p-b50">
+                <div class="container">
+                    <div class="blog-post date-style-3 blog-post-single">
+                        <div class="wt-post-media wt-img-effect">
+                            <a href="javascript:void(0);"><img src="{{blog.image.url}}" alt=""></a>
+                        </div>
+                        <div class="post-description-area p-t30">
+                            <div class="wt-post-title ">
+                                <h3 class="post-title">{{blog.title}}</h3>
+                            </div>
+                            <div class="wt-post-text">
+                               <p>{{blog.body|safe}}</p> 
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

@@ -1,0 +1,42 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{{kvkk.titlesite}}{% endblock title %}
+{% block meta %}
+<meta name="description" content="{{kvkk.description}}">
+<meta name="keywords" content="{% for cer in kvkk.keywords.all %}{{cer.name}},{% endfor %}">
+{% endblock meta %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+<div class="page-content">
+    <div class="wt-bnr-inr overlay-wraper" style="background-image:url('{{kvkk.bannerimage.url}}');">
+        <div class="overlay-main bg-black opacity-07"></div>
+        <div class="container">
+            <div class="wt-bnr-inr-entry">
+                <h1 class="text-white">{{kvkk.bannertitle}}</h1>
+                <p style="color:#fff;">{{kvkk.banner}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray-light p-tb20">
+        <div class="container">
+            <ul class="wt-breadcrumb breadcrumb-style-2">
+                <li><a href="/"><i class="fa fa-home"></i> Ana Sayfa</a></li>
+                <li>{{kvkk.title}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-full p-t80 p-b50">
+    <div class="section-head text-center">
+                <h2 class="text-uppercase">{{kvkk.title}}</h2>
+                <div class="wt-separator-outer">
+                    <div class="wt-separator style-square">
+                        <span class="separator-left bg-primary"></span>
+                        <span class="separator-right bg-primary"></span>
+                    </div>
+                </div>
+                <p>{{kvkk.body|safe}}</p>  
+           </div>
+            </div>
+        </div>
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

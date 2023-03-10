@@ -1,0 +1,131 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% load embed_video_tags %}
+{% block title %}{{pro.title|upper}}{% endblock title %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+<div class="page-content">
+    <div class="wt-bnr-inr overlay-wraper" style="background-image:url({{STATIC_URL}}web/images/urunlerimiz.jpg);">
+    <div class="overlay-main bg-black opacity-07"></div>
+    <div class="container">
+        <div class="wt-bnr-inr-entry">
+            <h1 class="text-white">{{pro.title}}</h1>
+        </div>
+    </div>
+    </div>
+    <div class="bg-gray-light p-tb20">
+    <div class="container">
+        <ul class="wt-breadcrumb breadcrumb-style-2">
+            <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+            <li>Product Detail</li>
+        </ul>
+    </div>
+    </div>
+    <div class="section-full p-t80 p-b50">
+    <div class="container woo-entry">
+    <div class="row m-b30">
+        <div class="col-md-4 col-sm-4 m-b30">
+            <div class="home-slider owl-carousel prod" style="padding:0px!important;height:360px!important;">
+                {% for sli in pro.slider.all %}
+                <div class="slider-item" style="background-image: url({{sli.image.url}});">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-8">
+            <div class="wt-post-title ">
+                <h3 class="post-title">{{pro.kod}}</h3>
+                <h2 class="m-tb10">{{pro.title}} </h2>
+            </div>
+            <div class="wt-post-text">
+                <p class="m-b10">{{pro.body|safe}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-20 m-b50">
+        <div class="col-md-3">
+            <button style="    width: 250px;" class="btn btn-primary site-button pull-left m-r10">Certifications</button>
+        </div>
+        <div class="col-md-3">
+            <button style="    width: 250px;" class="btn btn-primary site-button pull-left m-r10">Graphics, 3D ve Brochure</button>
+        </div>
+        <div class="col-md-3">
+            <button style="    width: 250px;" class="btn btn-primary site-button pull-left m-r10">Get Offer</button>
+        </div>
+        <div class="col-md-3">
+            <button style="    width: 250px;" class="btn btn-primary site-button pull-left m-r10">Discover At TTAF Shop</button>
+        </div>
+    </div>
+    </div>
+    <div class="section-full  p-t80 p-b80 bg-black-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="section-content">
+                <div class="wt-tabs border-top bg-tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#web-design-25"><i class="fa fa-globe"></i>Technical Specifications</a></li>
+                    </ul>
+                    <div class="tab-content text-white">
+                        <div id="web-design-25" class="tab-pane active">
+                            <p class="m-b0"><strong><em>{{pro.tek_body|safe}}<strong><em> </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="wt-box">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <p>{% video pro.video '320x320' %}</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container woo-entry">
+        <div class="row m-b30">
+            <div class="p-b10">
+                <h2 class="text-uppercase">Similar Products</h2>
+                <div class="wt-separator-outer  m-b30">
+                    <div class="wt-separator style-square">
+                    <span class="separator-left bg-primary"></span>
+                    <span class="separator-right bg-primary"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- TITLE END -->
+            <div class="row m-b30">
+                <!-- COLUMNS 1 -->
+                {% for prod in products  %}
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xs-100pc m-b30">
+                    <div class="wt-box wt-product-box">
+                    <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom">
+                        <img src="{{prod.image.url}}" alt="">
+                    </div>
+                    <div class="wt-info  text-center">
+                        <div class="p-a10 bg-white">
+                            <h4 class="wt-title">
+                                <a href="{% url 'web:per_detail_viewen' prod.slug %}">{{prod.title}}</a>
+                            </h4>
+                            <span class="price">
+                            {{prod.kod}}
+                            </span>
+                        </div>
+                        <div class="p-t10">
+                            <a  href="{% url 'web:per_detail_viewen' prod.slug %}" class="site-button  m-r15" type="button">Detail 
+                            <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                {% endfor %} 
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

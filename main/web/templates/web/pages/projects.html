@@ -1,0 +1,64 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{{blog_ic.titlesite}}{% endblock title %}
+{% block meta %}
+<meta name="description" content="{{blog_ic.description}}">
+<meta name="keywords" content="{% for cer in blog_ic.keywords.all %}{{cer.name}},{% endfor %}">
+{% endblock meta %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url('{{STATIC_URL}}web/images/background/8.jpg');">
+    	<div class="auto-container">
+        	<div class="inner-box">
+                <h1>Galeri</h1>
+                <ul class="bread-crumb">
+                	<li><a href="{% url 'web:welcome_view' %}">Ana Sayfa</a></li>
+                    <li>Galeri</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+    
+    <!--Product Section-->
+    <section class="product-section style-two">
+    	<div class="auto-container">
+        	
+            <!--Sortable Gallery-->
+            <div class="mixitup-gallery">
+                
+                <div class="filter-list row clearfix">
+                
+
+                    {% for pro in proj  %}
+                    <!--Gallery Item-->
+                    <div class="gallery-item mix all fruits col-md-6 col-sm-6 col-xs-12">
+                        <div class="inner-box">
+                            <div class="image-box"><img src="{{pro.image.url}}" alt="">
+                                <div class="overlay-box">
+                                    <div class="content">
+                                        <a class="lightbox-image" href="{{pro.image.url}}" title="{{pro.title}}" data-fancybox-group="example-gallery">
+                                            <span class="icon flaticon-plus"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    
+                </div>
+            </div>
+            
+            <!-- Styled Pagination -->
+            {% include 'web/includes/paginate.html' with page_obj=proj %}
+
+            
+        </div>
+    </section>
+    <!--End Product Section-->
+    
+
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

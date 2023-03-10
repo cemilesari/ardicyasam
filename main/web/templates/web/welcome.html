@@ -1,0 +1,785 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{{cont.titlesite}}{% endblock title %}
+{% block meta %}
+<meta name="description" content="{{cont.description}}">
+<meta name="keywords" content="{% for cer in cont.keywords.all %}{{cer.name}},{% endfor %}">
+{% endblock meta %}
+{% block extracss %}
+{% endblock extracss %}
+{% block content %}
+    <!--Main Slider-->
+    <section class="main-slider">
+    	
+      <div class="rev_slider_wrapper fullwidthbanner-container"  id="rev_slider_one_wrapper" data-source="gallery">
+          <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
+              <ul>
+                 
+                  <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1687" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="{% static  'web/images/main-slider/image-1.jpg' %}" data-title="Slide Title" data-transition="parallaxvertical">
+                  <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{first.sliderimage.url}}"> 
+                  
+                  <div class="tp-caption tp-resizeme" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-whitespace="nowrap"
+                  data-fontsize="['64','48','36','24']"
+                  data-width="none"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['-100','-120','-90','-120']"
+                  data-x="['center','center','center','center']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <figure class="content-image"><img src="{% static  'web/images/aridc.png' %}" alt=""></figure>
+                  </div>
+                  
+                  <div class="tp-caption" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-width="['900','600','400','290']"
+                  data-whitespace="normal"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['60','10','40','20']"
+                  data-x="['center','center','center','center']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <div class="text-center">
+                        <h2>{{first.title}}</h2>
+                      </div>
+                  </div>
+                  
+                  <div class="tp-caption tp-resizeme" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-whitespace="nowrap"
+                  data-width="none"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['130','160','90','80']"
+                  data-x="['center','center','center','center']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <ul class="slider-list">
+                         <li>Fruits</li>
+                          <li>Vegetables</li>
+                          <li>Food</li>
+                          <li>Breads</li>
+                      </ul>
+                  </div>
+                  
+                  <div class="tp-caption" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-width="['900','600','400','290']"
+                  data-whitespace="normal"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['200','90','160','140']"
+                  data-x="['center','center','center','center']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <div class="text-center">
+                        <a href="{% url 'web:per_view' %}" class="theme-btn btn-style-one">Keşfet</a>
+                      </div>
+                  </div>
+                  
+                  </li>
+                  
+                  <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1688" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="{% static  'web/images/main-slider/image-2.jpg' %}" data-title="Slide Title" data-transition="parallaxvertical">
+                  <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{second.sliderimage.url}}"> 
+                  
+                  <div class="tp-caption tp-resizeme" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-whitespace="nowrap"
+                  data-fontsize="['64','48','36','24']"
+                  data-width="none"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['-120','-130','-130','-120']"
+                  data-x="['left','left','left','left']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <div class="title">{{second.title}}</div>
+                  </div>
+                  
+                  <div class="tp-caption tp-resizeme" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-whitespace="nowrap"
+                  data-fontsize="['64','48','36','24']"
+                  data-width="none"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['-60','-65','-65','-70']"
+                  data-x="['left','left','left','left']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <h3>{{second.body}}</h3>
+                  </div>
+                  
+                  <div class="tp-caption" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-width="['900','600','400','290']"
+                  data-whitespace="normal"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['0','10','0','-15']"
+                  data-x="['left','left','left','left']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <div class="text"></div>
+                  </div>
+                  
+                  <div class="tp-caption tp-resizeme" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-whitespace="nowrap"
+                  data-width="none"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['50','60','50','20']"
+                  data-x="['left','left','left','left']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <ul class="slider-list">
+                         <li>Fruits</li>
+                          <li>Vegetables</li>
+                          <li>Food</li>
+                          <li>Breads</li>
+                      </ul>
+                  </div>
+                  
+                  <div class="tp-caption" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-width="['900','600','400','290']"
+                  data-whitespace="normal"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['120','130','110','80']"
+                  data-x="['left','left','left','left']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <a href="{% url 'web:per_view' %}" class="theme-btn btn-style-one">Keşfet</a>
+                  </div>
+                  
+                  </li>
+                  
+                  <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1690" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="{% static  'web/images/main-slider/image-3.jpg' %}" data-title="Slide Title" data-transition="parallaxvertical">
+                  <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{third.sliderimage.url}}"> 
+                  
+                  <div class="tp-caption tp-resizeme" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-whitespace="nowrap"
+                  data-fontsize="['64','48','36','24']"
+                  data-width="none"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['-130','-150','-140','-120']"
+                  data-x="['center','center','center','center']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <figure class="content-image"><img src="{% static  'web/images/main-slider/leaf-icon.png' %}" alt=""></figure>
+                  </div>
+                  
+                  <div class="tp-caption" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-width="['900','600','400','290']"
+                  data-whitespace="normal"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['-60','-100','-70','-60']"
+                  data-x="['center','center','center','center']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <div class="text text-center"> <span class="theme_color">{{third.title}}</span></div>
+                  </div>
+                  
+                  <div class="tp-caption" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-width="['900','600','400','290']"
+                  data-whitespace="normal"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['0','-55','40','40']"
+                  data-x="['center','center','center','center']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <h2 class="alternate"></h2>
+                  </div>
+                  
+                  
+                  <div class="tp-caption" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-width="['900','600','400','290']"
+                  data-whitespace="normal"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['55','10','-20','-20']"
+                  data-x="['center','center','center','center']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <h4>{{third.body}}</h4>
+                  </div>
+                  
+                  
+                  <div class="tp-caption tp-resizeme" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-whitespace="nowrap"
+                  data-width="none"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['100','50','110','90']"
+                  data-x="['center','center','center','center']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <ul class="slider-list">
+                         <li>Fruits</li>
+                          <li>Vegetables</li>
+                          <li>Food</li>
+                          <li>Breads</li>
+                      </ul>
+                  </div>
+                  
+                  <div class="tp-caption" 
+                  data-paddingbottom="[0,0,0,0]"
+                  data-paddingleft="[0,0,0,0]"
+                  data-paddingright="[0,0,0,0]"
+                  data-paddingtop="[0,0,0,0]"
+                  data-responsive_offset="on"
+                  data-type="text"
+                  data-height="none"
+                  data-width="['900','600','400','290']"
+                  data-whitespace="normal"
+                  data-hoffset="['15','15','15','15']"
+                  data-voffset="['170','100','170','150']"
+                  data-x="['center','center','center','center']"
+                  data-y="['middle','middle','middle','middle']"
+                  data-textalign="['top','top','top','top']"
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                  style="z-index: 7; white-space: nowrap;text-transform:left;">
+                     <div class="text-center">
+                        <a href="{% url 'web:per_view' %}" class="theme-btn btn-style-one">Keşfet</a>
+                      </div>
+                  </div>
+                  
+                  </li>
+                  
+              </ul>
+          </div>
+      </div>
+  </section>
+  <!--End Main Slider-->
+  
+  <!--Experiance Section-->
+  <section class="experiance-section" style="background-image:url('{{STATIC_URL}}web/images/background/1.png');">
+    <div class="auto-container">
+        <div class="inner-content">
+            <!--Sec Title-->
+             <div class="sec-title centered">
+                <div class="icon-box"></div>
+                 <div class="title">Hakkımızda</div>
+                 <h2>{{about.title}}</h2>
+             </div>
+             <div class="text-content">
+                <div class="text">{{about.body|safe}}</div>
+             </div>
+         </div>
+     </div>
+ </section>
+  <!--End Experiance Section-->
+  
+  <!--Cart Section-->
+  <section class="cart-info-section">
+     <div class="auto-container">
+         <div class="row clearfix">
+             <!--Column-->
+              <div class="content-column pull-right col-md-6 col-sm-12 col-xs-12">
+                 <div class="inner-column">
+                     <h3>Natural Vegitabels</h3>
+                      <h2>$35.00</h2>
+                      <div class="text">Nullam sit amet turpis ornare, pulvinar lectus in, cursus mi. Duis et unc eu li duis sodales tempor pulvinar.</div>
+                      <div class="category">Category : <span>Vegetable Box</span></div>
+                      <a href="shop-single.html" class="theme-btn btn-style-one"> Detaylı Bilgi</a>
+                  </div>
+              </div>
+              <!--Image Column-->
+             <div class="image-column pull-left col-md-6 col-sm-12 col-xs-12">
+                 <figure class="image">
+                     <img src="{% static  'web/images/resource/image-1.png' %}" alt="" />
+                  </figure>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!--End Cart Section-->
+  
+  <!--Featured Section-->
+  <section class="featured-section">
+     <div class="auto-container">
+         <div class="featured-inner">
+             <div class="row clearfix">
+                 <!--Featured Block-->
+                  <div class="featured-block col-md-4 col-sm-6 col-xs-12">
+                     <div class="inner-box">
+                         <div class="content">
+                             <div class="icon-box">
+                                 <span class="icon"><img src="{% static  'web/images/resource/featured-icon-1.png' %}" alt="" /></span>
+                              </div>
+                              <div class="title">Fariming Process</div>
+                              <h2><a href="services.html">Farm Fresh</a></h2>
+                              <div class="text">Cras ultricies mi eu turpis hen...</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!--Featured Block-->
+                  <div class="featured-block col-md-4 col-sm-6 col-xs-12">
+                     <div class="inner-box">
+                         <div class="content">
+                             <div class="icon-box">
+                                 <span class="icon"><img src="{% static  'web/images/resource/featured-icon-2.png' %}" alt="" /></span>
+                              </div>
+                              <div class="title">Organic Vegetables</div>
+                              <h2><a href="services.html">Fresh Vegetables</a></h2>
+                              <div class="text">Cras ultricies mi eu turpis hen...</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!--Featured Block-->
+                  <div class="featured-block col-md-4 col-sm-6 col-xs-12">
+                     <div class="inner-box">
+                         <div class="content">
+                             <div class="icon-box">
+                                 <span class="icon"><img src="{% static  'web/images/resource/featured-icon-3.png' %}" alt="" /></span>
+                              </div>
+                              <div class="title">Organic Fruits</div>
+                              <h2><a href="services.html">Fresh Fruits</a></h2>
+                              <div class="text">Cras ultricies mi eu turpis hen...</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+  </section>
+  <!--End Featured Section-->
+  
+  <!--Choose Section-->
+  <section class="choose-section">
+     <div class="auto-container">
+      
+         <!--Image Column-->
+          <div class="image-column">
+              <figure class="image">
+                  <img src="{% static  'web/images/resource/choose-inner.png' %}" alt="" />
+              </figure>
+              <!--Title Boxed-->
+              <div class="title-boxed">
+                  <div class="sec-title centered">
+                     <div class="icon-box"></div>
+                      <div class="title">Biz ne yapıyoruz ?</div>
+                      <h2>Bizi neden tercih etmelisiniz </h2>
+                  </div>
+              </div>
+          </div>
+         
+         <div class="row clearfix">
+          
+              <!--Column-->
+              <div class="column pull-left col-lg-4 col-md-6 col-sm-6 col-xs-12">
+              
+                  <!--Featured Block Two-->
+                  <div class="featured-block-two">
+                      <div class="inner-box">
+                          <div class="icon-box">
+                              <span class="icon flaticon-broccoli"></span>
+                          </div>
+                          <h3><a href="services.html">Quality Vegetables</a></h3>
+                          <div class="text">Ürettiğimiz gıdaların hammaddelerini çoğunlukla kendimiz üretmeye çalışıyor ve zirai ilaç
+                            kullanmadan yetiştiricilik yapıyoruz. </div>
+                      </div>
+                  </div>
+                  
+                  <!--Featured Block Two-->
+                  <div class="featured-block-two">
+                      <div class="inner-box">
+                          <div class="icon-box">
+                              <span class="icon flaticon-apple-1"></span>
+                          </div>
+                          <h3><a href="services.html">Standard Fruits</a></h3>
+                          <div class="text">Ürünlerimizde koruyucu, renklendirici, kıvam arttırıcı, aroma verici vb yapay eklentilerin
+                            hiçbirini kullanmıyoruz.</div>
+                      </div>
+                  </div>
+                  
+                  <!--Featured Block Two-->
+                  <div class="featured-block-two">
+                      <div class="inner-box">
+                          <div class="icon-box">
+                              <span class="icon flaticon-food"></span>
+                          </div>
+                          <h3><a href="services.html">High Quality Products</a></h3>
+                          <div class="text"> Ürünlerimizi yetiştirdiğimiz yerleri ziyaret edebilmenizden ve neyi nasıl ürettiğimizi tüm
+                            şeffaflığıyla gösterebilmemizden dolayı mutluluk duyuyoruz.  </div>
+                      </div>
+                  </div>
+                  
+              </div>
+              
+              <!--Column-->
+              <div class="column pull-right col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                  
+                  <!--Featured Block Three-->
+                  <div class="featured-block-three">
+                      <div class="inner-box">
+                          <div class="icon-box">
+                              <span class="icon flaticon-bus-1"></span>
+                          </div>
+                          <h3><a href="services.html">Fast Free Delivery</a></h3>
+                          <div class="text">Toprak kapasitesi ve iklim şartlarından dolayı üretemediğimiz hammaddemizi satın alırken,
+                            yine aynı felsefede üreticilik yapan yerli ve butik çiftçilerden tedarik sağlıyor, küçük üreticiyi
+                            destekliyoruz. </div>
+                      </div>
+                  </div>
+                  
+                  <!--Featured Block Three-->
+                  <div class="featured-block-three">
+                      <div class="inner-box">
+                          <div class="icon-box">
+                              <span class="icon flaticon-smartphone-1"></span>
+                          </div>
+                          <h3><a href="services.html">Custom Order</a></h3>
+                          <div class="text">Ürünlerimizi satın alma aşamasında ve sonrasında bizimle birebir ve hızlı iletişim kurabilme
+                            samimiyetine önem veriyoruz.</div>
+                      </div>
+                  </div>
+                  
+                  <!--Featured Block Three-->
+                  <div class="featured-block-three">
+                      <div class="inner-box">
+                          <div class="icon-box">
+                              <span class="icon flaticon-farmer-1"></span>
+                          </div>
+                          <h3><a href="services.html">Certified Farmers</a></h3>
+                          <div class="text">Üretim sürecimizin tamamında doğa ve hayvan iyiliğini gözetiyoruz. </div>
+                      </div>
+                  </div>
+                  
+              </div>
+              
+          </div>
+      </div>
+  </section>
+  <!--End Choose Section-->
+  
+  <!--Call To Action Section-->
+  <section class="call-to-action-section" style="background-image:url('{{STATIC_URL}}web/images/background/2.jpg');">
+     <div class="auto-container">
+         <h3>Sağlıklı yaşam</h3>
+          <h2>Sağlıklı görünüş içeride başlar</h2>
+          <a href="{% url 'web:per_view' %}" class="theme-btn btn-style-one">Tüm Ürünler</a>
+      </div>
+  </section>
+  <!--End Call To Action Section-->
+  
+  <!--Product Section-->
+  <section class="product-section">
+     <span class="product-right-image"><img src="{% static  'web/images/resource/product-right-image.jpg' %}" alt="" /></span>
+      <span class="product-left-image"><img src="{% static  'web/images/resource/product-left-image.jpg' %}" alt="" /></span>
+      <span class="product-middle-image"><img src="{% static  'web/images/resource/product-middle-image.jpg' %}" alt="" /></span>
+     <div class="auto-container">
+         <!--Sec Title-->
+          <div class="sec-title centered">
+             <div class="icon-box"></div>
+              <div class="title">Organik Alışveriş</div>
+              <h2>Organik Ürünlerimiz</h2>
+          </div>
+          
+          <!--Sortable Gallery-->
+          <div class="mixitup-gallery">
+           
+              
+              <div class="filter-list row clearfix">
+              
+   
+                  
+
+                  {% for prod in  protrlist %}
+                  <!--Shop Item-->
+                  <div class="shop-item col-md-4 col-sm-6 col-xs-12">
+                      <div class="inner-box">
+                          <div class="image-box"><img src="{{prod.image.url}}" alt="">
+                              <div class="overlay-box">
+                                  <!--lower box-->
+                                  <div class="lower-box">
+                                      <h3><a href="{% url 'web:per_detail_view' prod.slug %}">{{prod.title}}</a></h3>
+                                      <span class="price">{{prod.fiyat}} ₺  </span>
+                                      <a href="{% url 'web:per_detail_view' prod.slug %}" class="theme-btn btn-style-one">&ensp;Detay</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  {% endfor %}      
+                 
+              </div>
+          </div>
+          
+      </div>
+  </section>
+  <!--End Product Section-->
+  
+  <!--Subscribe Style One-->
+  <section class="subscribe-style-one">
+     <span class="left-image"><img src="{% static  'web/images/resource/newsletter-1.png' %}" alt="" /></span>
+     <div class="auto-container">
+         <div class="row clearfix">
+              <div class="column col-md-4 col-sm-12 col-xs-12">
+              </div>
+              <div class="column col-md-8 col-sm-12 col-xs-12">
+               <h2><br> <span class="theme_color">Ardıç Yaşam ile ilgili bir slogan</span></h2>
+
+              </div>
+          </div>
+      </div>
+      <span class="right-image"><img src="{% static  'web/images/resource/newsletter-2.png' %}" alt="" /></span>
+  </section>
+ <!--End Subscribe Style One-->
+  
+  <!--Farmer Section-->
+  <section class="farmer-section">
+     <div class="auto-container">
+         <span class="right-image"><img src="{% static  'web/images/resource/product-middle-image.jpg' %}" alt="" /></span>
+          <span class="left-image"><img src="{% static  'web/images/resource/farmer-left-img.jpg' %}" alt="" /></span>
+         <!--Sec Title-->
+          <div class="sec-title centered">
+             <div class="icon-box"></div>
+              <div class="title"> Mükemmel Ekibimiz</div>
+              <h2>Ekibimiz</h2>
+              <div class="text">As more and more people are turning to organic lifestyles & trying improve their health As more and more people </div>
+          </div>
+          <div class="row clearfix">
+             
+              <!--Team Member-->
+              <div class="team-member col-md-4 col-sm-6 col-xs-12">
+                 <div class="inner-box">
+                     <div class="image-box">
+                         <figure class="image"><img src="{% static  'web/images/resource/team-1.png' %}" alt=""></figure>
+                          <ul class="social-icon-two">
+                             <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
+                              <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                              <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                              <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                          </ul>
+                      </div>
+                      <div class="lower-content">
+                         <h4><a href="team-single.html">David Warner</a></h4>
+                          <div class="designation">Farm Manager</div>
+                          <div class="text">As more and more people are turning to organic lifestyles </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <!--Team Member-->
+              <div class="team-member col-md-4 col-sm-6 col-xs-12">
+                 <div class="inner-box">
+                     <div class="image-box">
+                         <figure class="image"><img src="{% static  'web/images/resource/team-2.png' %}" alt=""></figure>
+                          <ul class="social-icon-two">
+                             <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
+                              <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                              <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                              <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                          </ul>
+                      </div>
+                      <div class="lower-content">
+                         <h4><a href="team-single.html">James Simth</a></h4>
+                          <div class="designation">Pastoral Farmer</div>
+                          <div class="text">As more and more people are turning to organic lifestyles </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <!--Team Member-->
+              <div class="team-member col-md-4 col-sm-6 col-xs-12">
+                 <div class="inner-box">
+                     <div class="image-box">
+                         <figure class="image"><img src="{% static  'web/images/resource/team-3.png' %}" alt=""></figure>
+                          <ul class="social-icon-two">
+                             <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
+                              <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                              <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                              <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                          </ul>
+                      </div>
+                      <div class="lower-content">
+                         <h4><a href="team-single.html">Adam Rose</a></h4>
+                          <div class="designation">Arable Farmer</div>
+                          <div class="text">As more and more people are turning to organic lifestyles </div>
+                      </div>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+  </section>
+  <!--End Farmer Section-->
+  
+  <!--Testimonial Section-->
+  <section class="testimonial-section" style="background-image:url('{{STATIC_URL}}web/images/background/3.jpg');">
+     <div class="auto-container">
+         <!--Sec Title-->
+          <div class="sec-title light centered">
+             <div class="icon-box"></div>
+              <div class="title">Müşteri Yorumlarımız</div>
+              <h2>Müşterilerimiz</h2>
+              <div class="text">As more and more people are turning to organic lifestyles & trying improve their health As more and more people </div>
+          </div>
+          
+          <div class="single-item-carousel owl-carousel owl-theme">
+          
+              <!--Testimonail Style One-->
+              <div class="testimonail-style-one">
+                  <div class="inner-box">
+                      <div class="image-box">
+                          <img src="{% static  'web/images/resource/author-1.jpg' %}" alt="" />
+                      </div>
+                      <div class="text">Duis aute irure dolor in reprehenderit voluptate velit esse seds cillum dolore eu fugiat nulla pariatur exceptin reprehenderit voluptate velit </div>
+                      <h2>Dwyne Johnson</h2>
+                      <div class="designation">Regular Customer</div>
+                      <span class="quote-icon flaticon-left-quote-1"></span>
+                  </div>
+              </div>
+              
+              <!--Testimonail Style One-->
+              <div class="testimonail-style-one">
+                  <div class="inner-box">
+                      <div class="image-box">
+                          <img src="{% static  'web/images/resource/author-1.jpg' %}" alt="" />
+                      </div>
+                      <div class="text">Duis aute irure dolor in reprehenderit voluptate velit esse seds cillum dolore eu fugiat nulla pariatur exceptin reprehenderit voluptate velit </div>
+                      <h2>Dwyne Johnson</h2>
+                      <div class="designation">Regular Customer</div>
+                      <span class="quote-icon flaticon-left-quote-1"></span>
+                  </div>
+              </div>
+              
+              <!--Testimonail Style One-->
+              <div class="testimonail-style-one">
+                  <div class="inner-box">
+                      <div class="image-box">
+                          <img src="{% static  'web/images/resource/author-1.jpg' %}" alt="" />
+                      </div>
+                      <div class="text">Duis aute irure dolor in reprehenderit voluptate velit esse seds cillum dolore eu fugiat nulla pariatur exceptin reprehenderit voluptate velit </div>
+                      <h2>Dwyne Johnson</h2>
+                      <div class="designation">Regular Customer</div>
+                      <span class="quote-icon flaticon-left-quote-1"></span>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+  </section>
+  <!--End Testimonial Section-->
+  
+
+
+
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

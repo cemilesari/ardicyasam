@@ -1,0 +1,105 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}REAL ESTATE AND CONSTRUCTION{% endblock title %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+<div class="page-content">
+	<!-- INNER PAGE BANNER -->
+	<div class="wt-bnr-inr overlay-wraper" style="background-image:url({{STATIC_URL}}web/images/projelerimiz.jpg);">
+		<div class="overlay-main bg-black opacity-07"></div>
+		<div class="container">
+			<div class="wt-bnr-inr-entry">
+				<h1 class="text-white">REAL ESTATE AND CONSTRUCTION</h1>
+			</div>
+		</div>
+	</div>
+	<!-- INNER PAGE BANNER END -->
+	<!-- BREADCRUMB ROW -->
+	<div class="bg-gray-light p-tb20">
+		<div class="container">
+			<ul class="wt-breadcrumb breadcrumb-style-2">
+				<li>
+					<a href="/">
+						<i class="fa fa-home"></i> Home
+					</a>
+				</li>
+				<li>REAL ESTATE AND CONSTRUCTION</li>
+			</ul>
+		</div>
+	</div>
+	<!-- BREADCRUMB ROW END -->
+	<!-- SECTION CONTENT START -->
+	<div class="section-full p-t80 p-b50">
+		<div class="container">
+			<div class="section-head text-center">
+				<h2 class="text-uppercase">OUR LIGHTING PROJECTS</h2>
+				<div class="wt-separator-outer">
+					<div class="wt-separator style-square">
+						<span class="separator-left bg-primary"></span>
+						<span class="separator-right bg-primary"></span>
+					</div>
+				</div>
+				<p>All our projects in sports facilities, fairgrounds, congress centers, city parks, construction and many
+other areas are here!</p>
+			</div>
+			<!-- PAGINATION START -->
+			<div class="filter-wrap p-tb15">
+				<ul class="masonry-filter link-style  text-uppercase">
+					<li >
+						<a href="{% url 'web:projecten' %}">ALL</a>
+					</li>
+					<li >
+						<a href="{% url 'web:kamuen' %}">PUBLIC INSTITUTIONS</a>
+					</li>
+					<li >
+						<a href="{% url 'web:ozkuren' %}">PRIVATE INSTITUTIONS</a>
+					</li>
+					<li >
+						<a href="{% url 'web:halacen' %}">PUBLIC AREAS</a>
+					</li>
+					<li class="active">
+						<a href="{% url 'web:gayinen' %}">REAL ESTATE AND CONSTRUCTION</a>
+					</li>
+					<li class="">
+						<a href="{% url 'web:sporen' %}">SPORTS FACILITIES</a>
+					</li>
+				</ul>
+			</div>
+			<!-- PAGINATION END -->
+			<!-- GALLERY START -->
+		       <div class="row">
+                        <div class="portfolio-wrap mfp-gallery" style="position: relative; height: 451.094px;">
+                        {% for pro in proj  %}
+                    		<!-- COLUMNS 1 -->
+                           <div class="post masonry-item col-lg-4 col-md-6 col-sm-6 col-xs-12" >
+                                <div class="blog-post blog-grid date-style-3">
+                                    <div class="wt-post-media wt-img-effect zoom-slow">
+                                        <a href="{% url 'web:project-detail' pro.slug %}"><img src="{{pro.image.url}}" alt=""></a>
+                                    </div>
+                                    <div class="wt-post-info p-tb30 p-m30">
+                                        <div class="wt-post-title ">
+                                            <h3 class="post-title"><a href="#">{{pro.title}}</a></h3>
+                                        </div>
+                                        <div class="wt-post-text">
+                                            <p>{{pro.body|safe|truncatechars:50}}</p> 
+                                        </div>
+                                        <div class="clearfix">
+                                    <div class="wt-post-readmore pull-left">
+                                         <a href="{% url 'web:project-detail' pro.slug %}" title="READ MORE" rel="bookmark" class="site-button-link">Detail</a>
+                                    </div>
+                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+		</div>
+		<!-- SECTION CONTENT END  -->
+	</div>
+</div>
+
+{% include 'web/includes/contacttr.html' %}
+
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

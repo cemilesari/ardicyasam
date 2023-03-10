@@ -1,0 +1,132 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% load embed_video_tags %}
+{% block title %}{{pro.title|upper}}{% endblock title %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url('{{STATIC_URL}}web/images/background/8.jpg');">
+    	<div class="auto-container">
+        	<div class="inner-box">
+                <h1>Ürün Detay</h1>
+                <ul class="bread-crumb">
+                	<li><a href="{% url 'web:welcome_view' %}">Ana Sayfa</a></li>
+                    <li>{{pro.title}}</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+    
+    <!--Shop Single-->
+    <div class="shop-single">
+        <div class="auto-container">
+            <div class="row clearfix">
+				
+                <!--Content Side-->
+                <div class="content-side col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                	<!--Product Details-->
+                    <div class="product-details">
+						
+                        <!--Basic Details-->
+                        <div class="basic-details">
+                            <div class="row clearfix">
+                                <div class="image-column col-md-5 col-sm-5 col-xs-12">
+                                    <figure class="image-box"><a href="{{pro.image.urls}}" class="lightbox-image" title="Image Caption Here"><img src="{{pro.image.url}}" alt=""></a></figure>
+                                </div>
+                                <div class="info-column col-md-7 col-sm-7 col-xs-12">
+                                    <div class="details-header">
+                                        <h4>{{pro.title}}</h4>
+                                        <div class="rating">
+                                            <span class="fa fa-star-o"></span>
+                                            <span class="fa fa-star-o"></span>
+                                            <span class="fa fa-star-o"></span>
+                                            <span class="fa fa-star-o"></span>
+                                            <span class="fa fa-star-o"></span>
+                                        </div>
+                                        <div class="item-price">{{pro.fiyat}} ₺</div>
+                                    </div>
+                                    <div class="text">
+                                        {{pro.body | safe}}
+                                    </div>
+                                    <div class="clearfix">
+                                        <a href="https://api.whatsapp.com/send?phone=905396625831&text=Selamlar, {{pro.kod}} ürünüzle ilgili bilgi almak istiyorum" class="theme-btn btn-style-one "> Bize Yazın</a>
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <!--Basic Details-->
+                        
+                        <!--Product Info Tabs-->
+                        <div class="product-info-tabs">
+                            
+                            <!--Product Tabs-->
+                            <div class="prod-tabs tabs-box" id="product-tabs">
+                            
+                                <!--Tab Btns-->
+                                <ul class="tab-btns tab-buttons clearfix">
+                                    <li data-tab="#prod-description" class="tab-btn active-btn">Ürün Hakkında</li>
+                                </ul>
+                                
+                                <!--Tabs Content-->
+                                <div class="tabs-container tabs-content">
+                                    
+                                    <!--Tab / Active Tab-->
+                                    <div class="tab active-tab" id="prod-description">
+                                        <div class="content">
+                                            <p> {{pro.tek_body|safe }}</p>
+                                        </div>
+                                    </div>
+                                  
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        <!--End Product Info Tabs-->
+                        
+                        <!--Related Products-->
+                        <div class="related-products">
+                        	<h2>Benzer Ürünler</h2>
+                            
+                            <div class="row clearfix">
+                            	<!--Shop Item-->
+                                {% for prod in products  %}
+                                <div class="shop-item col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="inner-box">
+                                        <div class="image-box"><img src="{{prod.image.url}}" alt="">
+                                            <div class="overlay-box">
+                                                <!--lower box-->
+                                                <div class="lower-box">
+                                                    <h3><a href="{% url 'web:per_detail_view' prod.slug %}">{{prod.title}}</a></h3>
+                                                    <span class="price">{{prod.fiyat}} ₺ </span>
+                                                    <a href="{% url 'web:per_detail_view' prod.slug %}" class="theme-btn btn-style-one">Detay</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %} 
+                               
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <!--End Content Side-->
+                
+                <!--Sidebar-->
+            
+                <!--End Sidebar-->
+            </div>
+        </div>
+    </div>
+    <!--End Shop Single-->
+
+
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

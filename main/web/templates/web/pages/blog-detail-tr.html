@@ -1,0 +1,62 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{{blogtr.titlesite}}{% endblock title %}
+{% block meta %}
+<meta name="description" content="{{blogtr.description}}">
+<meta name="keywords" content="{% for cer in blogtr.keywords.all %}{{cer.name}},{% endfor %}">
+{% endblock meta %}{% block extracss %}{% endblock extracss %}
+{% block content %}
+
+<section class="page-title" style="background-image:url('{{STATIC_URL}}web/images/background/8.jpg');">
+    <div class="auto-container">
+        <div class="inner-box">
+            <h1>Blog Detay</h1>
+            <ul class="bread-crumb">
+                <li><a href="{% url 'web:welcome_view' %}">Ana Sayfa</a></li>
+                <li>Blog Detay</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+
+<!--Sidebar Page-->
+<div class="sidebar-page-container">
+    <div class="auto-container">
+        <div class="row clearfix">
+            
+            <!--Content Side-->
+            <div class="content-side col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <!--Blog Single-->
+                <div class="blog-single">
+                
+                    <!--News Block-->
+                    <div class="news-block">
+                        <div class="inner-box">
+                            <div class="image"><img src="{{blogtr.image.url}}" alt="" /></div>
+                            <div class="lower-content">
+                                <div class="post-date">{{blogtr.created|date:"d/m/Y"}}</div>
+                                <h3>{{blogtr.title}}</h3>
+                                <ul class="post-meta">
+                                    <li><span class="icon fa fa-user"></span>Admin</li>
+                                </ul>
+                                <div class="text">
+                                    <p>{{blogtr.body|safe}}</p>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                    <!--End News Block-->
+                    
+               
+              
+                </div>
+            </div>
+            <!--End Content Side-->
+       
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

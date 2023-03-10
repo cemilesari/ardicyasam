@@ -1,0 +1,17 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{% trans "SAMPLE" %}{% endblock title %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+
+     <div class="section-full p-tb100">
+            <div class="container">
+                <div class="row">
+                        <div class="about-com-pic">
+                            <img src="{% static 'web/images/hkk.jpg' %}" alt="" class="img-responsive"/>
+                        </div>
+                </div>
+            </div>
+        </div>   
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

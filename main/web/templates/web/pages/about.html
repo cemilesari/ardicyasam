@@ -1,0 +1,179 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{{about.titlesite}}{% endblock title %}
+{% block meta %}
+<meta name="description" content="{{about.description}}">
+<meta name="keywords" content="{% for cer in about.keywords.all %}{{cer.name}},{% endfor %}">
+{% endblock meta %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+<div class="page-content">
+        
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper" style="background-image:url('{{STATIC_URL}}web/images/hakkimizda.jpg');">
+            	<div class="overlay-main bg-black opacity-07"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <h1 class="text-white">About Us</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+            
+            <!-- BREADCRUMB ROW -->                            
+            <div class="bg-gray-light p-tb20">
+            	<div class="container">
+                    <ul class="wt-breadcrumb breadcrumb-style-2">
+                        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+                        <li>About Us</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- BREADCRUMB ROW END -->
+            <!-- ABOUT COMPANY SECTION START -->
+            <div class="section-full p-t80 p-b70">
+                <div class="container">
+                	<!-- TITTLE START -->
+                    <div class="section-head text-center">
+                        <h2 class="text-uppercase">About Us</h2>
+                        <div class="wt-separator-outer">
+                            <div class="wt-separator style-square">
+                                <span class="separator-left bg-primary"></span>
+                                <span class="separator-right bg-primary"></span>
+                            </div>
+                        </div>
+                        <p>TTAF Lighting, which was established in 2003 to realize special product designs for its customers in
+Led Lighting Applications, serves in its 6000m2 Istanbul facility.</p>
+                        <p>Supporting domestic production, TTAF Lighting manufactures indoor and outdoor lighting products
+and accessories for the basic needs of different sectors with its experience in the sector, dynamic
+staff and joint work with the world's most important manufacturers.</p>
+                        <p>TTAF Lighting believes in the importance of innovation and R&D for sustainable success in the
+electricity and electronics sector, has a multi-disciplinary structure that closely follows the
+developments in lighting solutions and reflects the studies in this direction to its products within the
+framework of international standards.</p>
+                        <p>Turkey and quality of the products produced in the electrical and electronics sector in the world, self-
+development, providing value-added, is committed to the development and production of its product. It aims to grow with new groups every year to improve the product items it produces
+together with the quality in production.</p>
+                        <p>TTAF; It gives confidence to its customers with its comprehensive product and system certificates
+ISO9001: 2008, AS9100C, TSE, IPC / WHMA-A-620B, UL, CE, ATEX, ETL & 3P.</p>
+                    </div>
+                    <!-- TITLE END -->                	
+                    <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6 col-xs-100pc">
+                  
+                     <div class="home-slider owl-carousel" style="padding:0px!important;height:540px!important;">
+                        <div class="slider-item" style="background-image: url('{{STATIC_URL}}web/images/Hakkimizda1.jpg');">
+                        </div>
+                        <div class="slider-item" style="background-image: url('{{STATIC_URL}}web/images/hakkimizda2.jpg');">
+                        </div>
+                        <div class="slider-item" style="background-image: url('{{STATIC_URL}}web/images/hakkimizda3.jpg');">
+                        </div>
+                    </div>
+                    
+                    </div>
+                    <!--fade slider END-->
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-xs-100pc">
+                            <!-- ACCORDIAN  BG DARK -->
+                            <div class="section-content">
+                                <div class="wt-accordion acc-bg-dark" id="accordion9">
+                                    <div class="panel wt-panel">
+                                        <div class="acod-head">
+                                             <h6 class="acod-title text-uppercase">
+                                                <a data-toggle="collapse" href="#collapseOne9" data-parent="#accordion9" aria-expanded="false" class="collapsed">
+                                                <img style="width:15px;height:14px;margin-top:-5px;" src="{% static 'web/images/mmb.svg' %}" alt="">
+                                                    OUR PRIORITY IS CUSTOMER SATISFACTION
+                                                <span class="indicator"><i class="fa fa-plus"></i></span>
+                                                </a>
+                                             </h6>
+                                        </div>
+                                        <div id="collapseOne9" class="acod-body collapse" aria-expanded="false" style="height: 0px;">
+                                            <div class="acod-content p-tb15">TTAF, established in Istanbul in 2003; advanced technology, connectors, cable
+harnesses and professional LED lighting applications and solutions with
+customers to design special products for different needs in terms of both in
+Turkey, and is an expert organization has gained the trust and appreciation
+worldwide. TTAF continues its production activities in the light of "CUSTOMER
+SATISFACTION FIRST" principle in its 6000m2 Istanbul facility and 4000m2
+Ankara facility.</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel wt-panel">
+                                        <div class="acod-head">
+                                             <h6 class="acod-title text-uppercase">
+                                                <a data-toggle="collapse" href="#collapseTwo9" class="collapsed" data-parent="#accordion9" aria-expanded="false">
+                                                <img  style="width:15px;height:14px;margin-top:-5px;"  src="{% static 'web/images/yub.svg' %}" alt="">
+
+                                              WE SUPPORT DOMESTIC PRODUCTIONS
+                                                <span class="indicator"><i class="fa fa-plus"></i></span>
+                                                </a>
+                                             </h6>
+                                        </div>
+                                        <div id="collapseTwo9" class="acod-body collapse" aria-expanded="false" style="height: 0px;">
+                                            <div class="acod-content p-tb15">TTAF has been supporting domestic production since the day it actualized its
+lighting projects and directs its customers to domestic productions. Since its
+establishment, it has increased domestic production and exports, offers its
+stakeholders and customers the advantages of domestic production, and ensures
+that domestic production is accepted in the market. In this way, it provides added
+value for the national economy.</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel wt-panel">
+                                        <div class="acod-head acc-actives">
+                                         <h6 class="acod-title text-uppercase acc-actives">
+                                            <a data-toggle="collapse" href="#collapseThree9" class="" data-parent="#accordion9" aria-expanded="true">
+                                            <img  style="width:15px;height:14px;margin-top:-5px;"  src="{% static 'web/images/ub.svg' %}" alt="">
+                                           WE LIGHTENING ALL ARROUND THE WORLD
+                                            <span class="indicator"><i class="fa fa-plus"></i></span>
+                                            </a>
+                                         </h6>
+                                        </div>
+                                        <div id="collapseThree9" class="acod-body collapse in" aria-expanded="true" style="">
+                                            <div class="acod-content p-tb15">Aiming to provide the highest quality products to its customers with its
+experience and knowledge of more than a quarter of a century, state-of-the-
+art machinery and superior service understanding, TTAF provides complete
+system solutions in a wide range of telecommunication, defense industry,
+aerospace, automotive and lighting solutions and currently exports.</div>
+                                        </div>
+                                    </div>
+                                </div>                                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <!-- ABOUT COMPANY SECTION END -->
+            
+            <!-- COMPANY DETAIL SECTION START -->
+            
+            <!-- COMPANY DETAIL SECTION End -->   
+                     
+            <!-- SECTION CONTENT START -->
+            <div class="section-full p-t80 p-b50 bg-gray">
+                <div class="container">
+                
+                    <div class="section-head text-center">
+                        <h2 class="text-uppercase">OUR FUNDAMENTAL PRINCIPLES</h2>
+                        <span class="title-small">We research, develop and produce in the light of our basic principles!</span>
+                        <div class="wt-separator bg-primary"></div>
+                    </div>
+                    <!-- TITLE END -->                
+                    <!-- PAGINATION TOP START -->
+                    <div class="filter-wrap p-tb15">
+                        <ul class="">
+                            <p class="text-center">- Carrying Out Activities Based On Customer Satisfaction According To The
+Principles Of The Quality Management System That Has Been Established</p>
+                            <p class="text-center">- Continuously Improving and Developing the System with the Contribution of
+All Employees,</p>
+                            <p class="text-center">- Providing Timely and Flawless Service By Making The Right At The First Time</p>
+                            <p class="text-center">- Contributing to the Economy of the Country by Manufacturing in Modern
+Technology and World Standards</p>
+                            <p class="text-center">- Producing in International Quality Standards and Competing in World
+Markets</p>
+                        </ul>
+                    </div>
+                    <!-- PAGINATION END -->
+                </div>
+            </div>
+{% include 'web/includes/contact.html' %}
+
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

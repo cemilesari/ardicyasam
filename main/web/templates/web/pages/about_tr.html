@@ -1,0 +1,193 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{{about.titlesite}}{% endblock title %}
+{% block meta %}
+<meta name="description" content="{{about.description}}">
+<meta name="keywords" content="{% for cer in about.keywords.all %}{{cer.name}},{% endfor %}">
+{% endblock meta %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+
+<section class="page-title" style="background-image:url('{{STATIC_URL}}web/images/background/8.jpg');">
+    <div class="auto-container">
+        <div class="inner-box">
+            <h1>Hakkımızda</h1>
+            <ul class="bread-crumb">
+                <li><a href="{% url 'web:welcome_view' %}">Ana Sayfa</a></li>
+                <li>Hakkımızda</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+  <!--Experiance Section-->
+  <section class="experiance-section" style="background-image:url('{{STATIC_URL}}web/images/background/1.png');">
+    <div class="auto-container">
+        <div class="inner-content">
+            <!--Sec Title-->
+             <div class="sec-title centered">
+                <div class="icon-box"></div>
+                 <div class="title">Hakkımızda</div>
+                 <h2>{{about.title}}</h2>
+             </div>
+             <div class="text-content">
+                <div class="text">{{about.body|safe}}</div>
+             </div>
+         </div>
+     </div>
+ </section>
+ <!--End Experiance Section-->
+ 
+
+ 
+
+ 
+ <section class="call-to-action-section" style="background-image:url('{{STATIC_URL}}web/images/background/2.jpg');">
+    <div class="auto-container">
+        <h3>Sağlıklı yaşam</h3>
+         <h2>Sağlıklı görünüş içeride başlar</h2>
+         <a href="{% url 'web:per_view' %}" class="theme-btn btn-style-one">Tüm Ürünler</a>
+     </div>
+ </section>
+ 
+
+
+ <!--Farmer Section-->
+ <section class="farmer-section">
+    <div class="auto-container">
+        <span class="right-image"><img src="{% static  'web/images/resource/product-middle-image.jpg' %}" alt="" /></span>
+         <span class="left-image"><img src="{% static  'web/images/resource/farmer-left-img.jpg' %}" alt="" /></span>
+        <!--Sec Title-->
+         <div class="sec-title centered">
+            <div class="icon-box"></div>
+             <div class="title">Our Great Team</div>
+             <h2>Our Farmers</h2>
+             <div class="text">As more and more people are turning to organic lifestyles & trying improve their health As more and more people </div>
+         </div>
+         <div class="row clearfix">
+            
+             <!--Team Member-->
+             <div class="team-member col-md-4 col-sm-6 col-xs-12">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image"><img src="{% static  'web/images/resource/team-1.png' %}" alt=""></figure>
+                         <ul class="social-icon-two">
+                            <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
+                             <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                             <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                             <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                         </ul>
+                     </div>
+                     <div class="lower-content">
+                        <h4><a href="team-single.html">David Warner</a></h4>
+                         <div class="designation">Farm Manager</div>
+                         <div class="text">As more and more people are turning to organic lifestyles </div>
+                     </div>
+                 </div>
+             </div>
+             
+             <!--Team Member-->
+             <div class="team-member col-md-4 col-sm-6 col-xs-12">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image"><img src="{% static  'web/images/resource/team-2.png' %}" alt=""></figure>
+                         <ul class="social-icon-two">
+                            <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
+                             <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                             <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                             <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                         </ul>
+                     </div>
+                     <div class="lower-content">
+                        <h4><a href="team-single.html">James Simth</a></h4>
+                         <div class="designation">Pastoral Farmer</div>
+                         <div class="text">As more and more people are turning to organic lifestyles </div>
+                     </div>
+                 </div>
+             </div>
+             
+             <!--Team Member-->
+             <div class="team-member col-md-4 col-sm-6 col-xs-12">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image"><img src="{% static  'web/images/resource/team-3.png' %}" alt=""></figure>
+                         <ul class="social-icon-two">
+                            <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
+                             <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                             <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                             <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                         </ul>
+                     </div>
+                     <div class="lower-content">
+                        <h4><a href="team-single.html">Adam Rose</a></h4>
+                         <div class="designation">Arable Farmer</div>
+                         <div class="text">As more and more people are turning to organic lifestyles </div>
+                     </div>
+                 </div>
+             </div>
+             
+         </div>
+     </div>
+ </section>
+ <!--End Farmer Section-->
+ 
+ <!--Testimonial Section-->
+ <section class="testimonial-section" style="background-image:url('{{STATIC_URL}}web/images/background/3.jpg');">
+    <div class="auto-container">
+        <!--Sec Title-->
+         <div class="sec-title light centered">
+            <div class="icon-box"></div>
+             <div class="title">Customer Feedback</div>
+             <h2>Testimonials</h2>
+             <div class="text">As more and more people are turning to organic lifestyles & trying improve their health As more and more people </div>
+         </div>
+         
+         <div class="single-item-carousel owl-carousel owl-theme">
+         
+             <!--Testimonail Style One-->
+             <div class="testimonail-style-one">
+                 <div class="inner-box">
+                     <div class="image-box">
+                         <img src="{% static  'web/images/resource/author-1.jpg' %}" alt="" />
+                     </div>
+                     <div class="text">Duis aute irure dolor in reprehenderit voluptate velit esse seds cillum dolore eu fugiat nulla pariatur exceptin reprehenderit voluptate velit </div>
+                     <h2>Dwyne Johnson</h2>
+                     <div class="designation">Regular Customer</div>
+                     <span class="quote-icon flaticon-left-quote-1"></span>
+                 </div>
+             </div>
+             
+             <!--Testimonail Style One-->
+             <div class="testimonail-style-one">
+                 <div class="inner-box">
+                     <div class="image-box">
+                         <img src="{% static  'web/images/resource/author-1.jpg' %}" alt="" />
+                     </div>
+                     <div class="text">Duis aute irure dolor in reprehenderit voluptate velit esse seds cillum dolore eu fugiat nulla pariatur exceptin reprehenderit voluptate velit </div>
+                     <h2>Dwyne Johnson</h2>
+                     <div class="designation">Regular Customer</div>
+                     <span class="quote-icon flaticon-left-quote-1"></span>
+                 </div>
+             </div>
+             
+             <!--Testimonail Style One-->
+             <div class="testimonail-style-one">
+                 <div class="inner-box">
+                     <div class="image-box">
+                         <img src="{% static  'web/images/resource/author-1.jpg' %}" alt="" />
+                     </div>
+                     <div class="text">Duis aute irure dolor in reprehenderit voluptate velit esse seds cillum dolore eu fugiat nulla pariatur exceptin reprehenderit voluptate velit </div>
+                     <h2>Dwyne Johnson</h2>
+                     <div class="designation">Regular Customer</div>
+                     <span class="quote-icon flaticon-left-quote-1"></span>
+                 </div>
+             </div>
+             
+         </div>
+     </div>
+ </section>
+ <!--End Testimonial Section-->
+ 
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

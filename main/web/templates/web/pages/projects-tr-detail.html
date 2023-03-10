@@ -1,0 +1,124 @@
+
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{{pro.titlesite}}{% endblock title %}
+{% block meta %}
+<meta name="description" content="{{pro.description}}">
+<meta name="keywords" content="{% for cer in pro.keywords.all %}{{cer.name}},{% endfor %}">
+{% endblock meta %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+<div class="page-content">
+        
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper" style="background-image:url({{STATIC_URL}}web/images/projelerimiz.jpg);">
+            	<div class="overlay-main bg-black opacity-07"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <h1 class="text-white">{{pro.title}}</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+            
+            <!-- BREADCRUMB ROW -->                            
+            <div class="bg-gray-light p-tb20">
+            	<div class="container">
+                    <ul class="wt-breadcrumb breadcrumb-style-2">
+                        <li><a href="/"><i class="fa fa-home"></i> Ana Sayfa</a></li>
+                        <li>{{pro.title}}</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- BREADCRUMB ROW END -->
+            
+        	<div class="section-full p-t80">
+                <div class="container">
+                	<div class="row"> 
+                        <div class="col-md-7 col-sm-7">
+                               <div class="home-slider owl-carousel prod" style="padding:0px!important;height:360px!important;">
+                                    {% for sli in pro.slider.all %}
+                                    <div class="slider-item" style="background-image: url({{sli.image.url}});">
+                                    </div>
+                                    {% endfor %}
+                                </div>                     	
+                        </div>
+                        <div class="col-md-5 col-sm-5">
+                        	<div class="text-justify">
+                                <h2 class="text-uppercase">{{pro.title}}</h2>
+                                <p>{{pro.tek_body|safe}}</p>
+                    		</div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <!-- SECTION CONTENT START -->         
+            <div class="section-full bg-white p-b50">
+                <div class="container">
+                
+                       <!-- IMAGE CAROUSEL START -->
+                    
+                    	<!-- TITLE START -->
+                        <div class="section-head">
+                            <h2 class="text-uppercase">PROJEDE KULLANILAN ÜRÜNLER</h2>
+                            <div class="wt-separator-outer">
+                            	<div class="wt-separator style-square">
+                                <span class="separator-left bg-primary"></span>
+                                <span class="separator-right bg-primary"></span>
+                            </div>
+                            </div>
+                        </div>
+                    	<!-- TITLE END -->
+                        
+                        <!-- CAROUSEL -->
+                        <div class="section-content">
+                        {% for prod in pro.products.all   %}
+                            <div class="col-md-3 col-sm-4 col-xs-6 col-xs-100pc m-b30">
+                                <div class="wt-box wt-product-box">
+                                    <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom">
+                                        <img src="{{prod.image.url}}" alt="">
+                                    </div>
+                                    <div class="wt-info  text-center">
+                                        <div class="p-a10 bg-white">
+                                            <h4 class="wt-title">
+                                                <a href="{% url 'web:per_detail_view' prod.slug %}">{{prod.title}}</a>
+                                            </h4>
+                                            <span class="price">
+                                            {{prod.kod}}
+                                            </span>
+                                        </div>
+                                        <div class="p-t10">
+                                            <a  href="{% url 'web:per_detail_view' prod.slug %}" class="site-button  m-r15" type="button">İncele 
+                                            <i class="fa fa-angle-double-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+         		</div>
+         	</div>
+            <!-- SECTION CONTENT END --> 
+             <div class="call-to-action-wrap call-to-action-skew bg-primary bg-no-repeat" style="background-image:url(images/background/bg-4.png);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8">
+                            <div class="call-to-action-left p-tb20 p-r50">
+                                <h4 class="text-uppercase m-b10">TTAF AYDINLATMA PROJELERİNİN TAMAMINI GÖRÜNTÜLEMEK İSTER MİSİNİZ?</h4>
+                                <p>Spor Tesisleri, fuar alanları, şehir parkları ve daha birçok alanda gerçekleştirdiğimiz tüm projeler burada!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="call-to-action-right p-tb30">
+                                <a href="{% url 'web:project' %}" class="site-button-secondry  m-r15 text-uppercase font-weight-600">
+                                   GÖRÜNTÜLE <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>            
+        </div>
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

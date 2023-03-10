@@ -1,0 +1,120 @@
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+{% get_language_info for LANGUAGE_CODE as lang_info %}
+
+<body>
+    <div class="page-wrapper">
+         
+        <!-- Preloader -->
+        <div class="preloader"></div>
+         
+        <!-- Main Header-->
+        <header class="main-header">
+            
+            <!-- Header Top -->
+            <div class="header-top">
+                <div class="auto-container clearfix">
+                    <!--Top Left-->
+                    <div class="top-left pull-left">
+                        <ul class="links-nav clearfix">
+                            <li><a href="mailto:ardicyasam@gmail.com"><span class="icon fa fa-envelope-o"></span> Bize Yazın : ardicyasam@gmail.com</a></li>
+                            <li><a href="tel:+905300944114" ><span class="icon fa fa-phone"></span> Şimdi Ara : +90 530 094 41 14</a></li>
+                        </ul>
+                    </div>
+                    
+                  
+                </div>
+            </div>
+            <!-- Header Top End -->
+            
+            <!--Header-Upper-->
+            <div class="header-upper">
+                <div class="auto-container">
+                        
+                    <div class="logo-outer">
+                        <div class="logo"><a href="{% url 'web:welcome_view' %}"><img src="{% static 'web/images/logo3.png' %}" alt="" title=""></a></div>
+                    </div>
+                        
+                    <div class="nav-outer clearfix">
+                    
+                        <!-- Main Menu -->
+                        <nav class="main-menu">
+                            <div class="navbar-header">
+                                <!-- Toggle Button -->    	
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            
+                            <div class="navbar-collapse collapse clearfix">
+                                <!--Left Nav-->
+                                <ul class="navigation left-nav clearfix">
+                                    <li><a href="{% url 'web:welcome_view' %}">Ana Sayfa</a></li>
+                                    <li><a href="{% url 'web:about' %}">Hakkımızda</a></li>
+                                    <li><a href="{% url 'web:per_view' %}">Ürünlerimiz</a></li>
+                                </ul>
+                                <!--Right Nav-->
+                                <ul class="navigation right-nav clearfix">
+                                    <li><a href="{% url 'web:project' %}">Galeri</a></li>
+                                  
+                                    <li><a href="{% url 'web:blog_view' %}">Blog</a></li>
+                                    <li><a href="{% url 'web:contact' %}">İletişim</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        
+                        <!--Search Box-->
+                        
+                    </div>
+                </div>
+            </div>
+            <!--End Header Upper-->
+            
+            <!--Sticky Header-->
+            <div class="sticky-header">
+                <div class="auto-container clearfix">
+                    <!--Logo-->
+                    <div class="logo pull-left">
+                        <a href="{% url 'web:welcome_view' %}" class="img-responsive"><img style="    width: 130px;
+                            margin-top: 9px;"src="{% static 'web/images/ard.png' %}" alt="" title=""></a>
+                    </div>
+                    
+                    <!--Right Col-->
+                    <div class="right-col pull-right">
+                        <!-- Main Menu -->
+                        <nav class="main-menu">
+                            <div class="navbar-header">
+                                <!-- Toggle Button -->    	
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+                                    <li class="current"><a href="{% url 'web:welcome_view' %}">Ana Sayfa</a>
+                                    
+                                    </li>
+                                    <li><a href="{% url 'web:about' %}">Hakkımızda</a></li>
+                                    <li><a href="{% url 'web:per_view' %}">Ürünlerimiz</a></li>
+                                    <li><a href="{% url 'web:project' %}">Galeri</a></li>
+                                  
+                                    <li><a href="{% url 'web:blog_view' %}">Blog</a></li>
+                                    <li><a href="{% url 'web:contact' %}">İletişim</a></li>
+                                </ul>
+                            </div>
+                        </nav><!-- Main Menu End-->
+                    </div>
+                    
+                </div>
+            </div>
+            <!--End Sticky Header-->
+        
+        </header>
+        <!--End Main Header -->

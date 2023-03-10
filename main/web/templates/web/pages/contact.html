@@ -1,0 +1,207 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{{cont.titlesite}}{% endblock title %}
+{% block meta %}
+<meta name="description" content="{{cont.description}}">
+<meta name="keywords" content="{% for cer in cont.keywords.all %}{{cer.name}},{% endfor %}">
+{% endblock meta %}
+{% block extracss %}
+
+{% endblock extracss %}
+{% block content %}
+<div class="page-content">
+        
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper" style="background-image:url('{{STATIC_URL}}web/images/bl.jpg');">
+            	<div class="overlay-main bg-black opacity-07"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <h1 class="text-white">CONTACT US</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+            
+            <!-- BREADCRUMB ROW -->                            
+            <div class="bg-gray-light p-tb20">
+            	<div class="container">
+                    <ul class="wt-breadcrumb breadcrumb-style-2">
+                        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+                        <li>Contact us</li>
+                    </ul>
+                </div>
+            </div>
+             
+            <!-- SECTION CONTENTG START -->
+            <div class="section-full p-t80 p-b50">
+                <div class="container">
+                    <div class="section-head text-center">
+                        <h2 class="text-uppercase">CONTACT US</h2>
+                        <div class="wt-separator-outer">
+                            <div class="wt-separator style-square">
+                                <span class="separator-left bg-primary"></span>
+                                <span class="separator-right bg-primary"></span>
+                            </div>
+                        </div>
+                        <p>You can contact us to get detailed information about lighting technologies, solutions and
+products from A to Z.</p>
+                    </div>
+                	<!-- CONTACT DETAIL BLOCK -->
+                    <div class="section-content m-b30">
+ 
+                        <div class="row">
+                        
+                            <div class="col-md-4 col-sm-12 m-b30">
+                                <div class="wt-icon-box-wraper center p-a30 bg-secondry" style="height: 192px;">
+                                  <a href="tel:(+90) 212 855 82 20">  <div class="icon-sm text-white m-b10"><i class="iconmoon-smartphone-1"></i></div>
+                                    <div class="icon-content">
+                                        <h5 class="text-white">Telephone-Fax</h5>
+                                        <p class="text-gray-dark">(+90) 212 855 82 20 <br> (+90) 212 855 82 21</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12 m-b30">
+                                <div class="wt-icon-box-wraper center p-a30 bg-secondry" style="height: 192px;">
+                                     <a href="mailto:info@ttaf.com.tr"> <div class="icon-sm text-white m-b10"><i class="iconmoon-email"></i></div>
+                                    <div class="icon-content">
+                                      <h5 class="text-white">Email</h5>
+                                        <p class="text-gray-dark">info@ttaf.com.tr</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12 m-b30">
+                                <div class="wt-icon-box-wraper center p-a30 bg-secondry" style="height: 192px;">
+                                    <div class="icon-sm text-white m-b10"><i class="iconmoon-travel"></i></div>
+                                    <div class="icon-content">
+                                        <h5 class="text-white">Address</h5>
+                                        <p class="text-gray-dark">Kavaklı Mah. İstanbul Cad. No:21<br> Beylikdüzü / İstanbul / TÜRKİYE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+          
+                    </div>
+                    
+                    <!-- GOOGLE MAP & CONTACT FORM -->
+                    <div class="section-content m-b50">
+                        <div class="row">
+                        
+                        	<!-- LOCATION BLOCK-->
+                            <div class="wt-box col-md-6">
+                            
+                                 <h4 class="text-uppercase">LOCATION</h4>
+                                <div class="wt-separator-outer m-b30">
+                                   <div class="wt-separator style-square">
+                                       <span class="separator-left bg-primary"></span>
+                                       <span class="separator-right bg-primary"></span>
+                                   </div>
+                               </div>      
+                                                        
+
+                                <div class="gmap-outline m-b30">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.8729872112226!2d28.63420431541332!3d40.98426197930317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55fd03f43885d%3A0x906e8a4ff19dfa7b!2zS2F2YWtsxLEsIMSwc3RhbmJ1bCBDZC4gTm86MjEsIDM0NTIwIEJleWxpa2TDvHrDvCBPc2IvQmV5bGlrZMO8esO8L8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1602684818730!5m2!1str!2str" 
+                                width="550" height="426" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                </div>
+                                    
+                            </div>
+
+                            <!-- CONTACT FORM-->
+                            <div class="wt-box col-md-6">
+                            
+                                <h4 class="text-uppercase">CONTACT FORM </h4>
+                                <div class="wt-separator-outer m-b30">
+                                    <div class="wt-separator style-square">
+                                       <span class="separator-left bg-primary"></span>
+                                       <span class="separator-right bg-primary"></span>
+                                    </div>
+                                    
+                                </div>
+                            
+                            	<div class="p-a30 bg-gray">
+                            
+                                    <form class="needs-validation" method="post" action="{% url 'web:contact_en' %}" novalidate>
+                                    {% csrf_token %}
+                                        <div class="row">
+                                        
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                        <input name="full_name" type="text" required="" class="form-control" placeholder="Name surname" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                                        <input name="tel" type="text" required="" class="form-control" placeholder="Telephone" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                        <input name="email" type="text" class="form-control" required="" placeholder="Email" required>
+                                                    </div>
+                                                </div>
+            
+                                            </div>
+            
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon v-align-t"><i class="fa fa-pencil"></i></span>
+                                                        <textarea name="body" rows="2" class="form-control " required="" placeholder="Your message"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                            <label class="form-check-label" for="invalidCheck" style="margin-left: 20px;">
+                                            Please confirm that you have shared your personal data with our brand (TTAF
+                                            Medical) under the GDPR Law. For information about our privacy practices,
+                                                <a href="{% url 'web:aydinlatma_metni_en' %}" style="color:#e13c5a;">
+                                              please visit the Privacy Policy  </a>   section on our website.</label>
+                                            </div>
+                                            {% include 'web/includes/message.html' %}
+                                            <div class="col-md-12">
+                                                <button type="submit" value="Submit" class="site-button  m-r15">Send  
+                                                <i class="fa fa-angle-double-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+            <!-- SECTION CONTENT END -->
+            
+        </div>
+{% endblock content %}
+{% block extrajs %}
+<script>
+    (function() {
+'use strict';
+window.addEventListener('load', function() {
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.getElementsByClassName('needs-validation');
+// Loop over them and prevent submission
+var validation = Array.prototype.filter.call(forms, function(form) {
+form.addEventListener('submit', function(event) {
+if (form.checkValidity() === false) {
+event.preventDefault();
+event.stopPropagation();
+}
+form.classList.add('was-validated');
+}, false);
+});
+}, false);
+})();
+</script>
+{% endblock extrajs %}

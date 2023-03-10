@@ -1,0 +1,75 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{{blog_ic.titlesite}}{% endblock title %}
+{% block meta %}
+<meta name="description" content="{{blog_ic.description}}">
+<meta name="keywords" content="{% for cer in blog_ic.keywords.all %}{{cer.name}},{% endfor %}">
+{% endblock meta %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url('{{STATIC_URL}}web/images/background/8.jpg');">
+    	<div class="auto-container">
+        	<div class="inner-box">
+                <h1>Blog</h1>
+                <ul class="bread-crumb">
+                	<li><a href="{% url 'web:welcome_view' %}">Ana Sayfa</a></li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+    
+    <!--Sidebar Page-->
+    <div class="sidebar-page-container">
+        <div class="auto-container">
+            <div class="row clearfix">
+				
+                <!--Content Side-->
+                <div class="content-side col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                	<!--Our-Blogs-->
+                    <div class="our-blogs">
+					
+
+                        {% for blog in bloglist_tr  %}
+                    	<!--News Block-->
+                        <div class="news-block">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <a href="{% url 'web:blog_detail' blog.slug %}"><img src="{{blog.image.url}}" alt=""></a>
+
+                                    <div class="overlay-box">
+                                        <a href="{% url 'web:blog_detail' blog.slug %}"><span class="icon flaticon-unlink"></span></a>
+                                    </div>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="post-date">{{blog.created|date:"d/m/Y"}}</div>
+                                    <h3><a href="{% url 'web:blog_detail' blog.slug %}">{{blog.title}}</a></h3>
+                                    <ul class="post-meta">
+                                        <li><span class="icon fa fa-user"></span>Admin</li>
+                                    </ul>
+                                    <div class="text">{{blog.body|truncatechars:250|safe}}</div>
+                                    <a class="read-more" href="{% url 'web:blog_detail' blog.slug %}">Detaylı İncele &nbsp;<span class="fa fa-angle-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {% endfor %}
+
+                    
+                    </div>
+                    <!-- Styled Pagination -->
+                    {% include 'web/includes/paginate.html' with page_obj=bloglist_tr %}
+
+                </div>
+                <!--End Content Side-->
+                
+                
+            </div>
+        </div>
+    </div>
+    
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}
