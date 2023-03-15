@@ -55,7 +55,6 @@ resimler/
 _teta-breeding/
 core/prod_settings.py
 core/wsgi.py
-static/
 httpd.conf.template
 
 db.sqlite3

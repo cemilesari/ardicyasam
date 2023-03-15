@@ -80,8 +80,8 @@ class BlogTr(TimeStampedModel):
         )
 class BlogSeoPageModel(TimeStampedModel):
     class Meta: 
-        verbose_name = _("2.1-Blog Seo ")
-        verbose_name_plural = _("2.1- Blog Seo")
+        verbose_name = _("Blog Seo ")
+        verbose_name_plural = _("Blog Seo")
         ordering = ("-created",)
     title  = models.CharField(_("Site Başlık"), max_length=200,)
     image  = models.ImageField(_("Blog Liste Banner"), upload_to=settings.DEFAULT_BLOG_FOLDER, blank=True, default=settings.DEFAULT_BLOG_IMAGE)

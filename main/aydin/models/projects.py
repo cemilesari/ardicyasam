@@ -69,8 +69,8 @@ class CategoryTR(TimeStampedModel):
         return self.name
 class ProjectsTR(TimeStampedModel):
     class Meta:
-        verbose_name = _("Galeri")
-        verbose_name_plural = _("Galeri ")
+        verbose_name = _("5-Galeri")
+        verbose_name_plural = _("5-Galeri ")
         ordering = ("-created",)
     title    = models.CharField(_("Başlık"), max_length=200,)
     image    = models.ImageField(_("Ürün Resim"), upload_to=settings.DEFAULT_BLOG_FOLDER, blank=True, default=settings.DEFAULT_BLOG_IMAGE)

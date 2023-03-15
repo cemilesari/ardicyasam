@@ -32,8 +32,8 @@ class İletisimSeo(TimeStampedModel):
         return self.titlesite
 class İletisimSeoTR(TimeStampedModel):
     class Meta:
-        verbose_name = _(" SEO İletisim")
-        verbose_name_plural = _(" SEO İletisim")
+        verbose_name = _("İletisim Seo")
+        verbose_name_plural = _("İletisim Seo")
         ordering = ("-created",)
     titlesite = models.CharField(_("Site Title"), max_length=200,blank=True, null=True)
     description = models.CharField(_("Meta Description"), max_length=200,blank=True, null=True)

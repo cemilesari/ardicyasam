@@ -11,7 +11,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Slider(TimeStampedModel):
     class Meta:
         verbose_name = _("0-Slider ")
-        verbose_name_plural = _("0-liderlar")
+        verbose_name_plural = _("0-Sliderlar")
         ordering = ("-created",)
     title  = models.CharField(_("Başlık"), max_length=200,)
     body   = models.TextField(_("Slider Body"), blank=True)
