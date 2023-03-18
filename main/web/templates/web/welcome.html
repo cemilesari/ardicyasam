@@ -57,7 +57,6 @@
                   data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
                   style="z-index: 7; white-space: nowrap;text-transform:left;">
                      <div class="text-center">
-                        <h2>{{first.title}}</h2>
                       </div>
                   </div>
                   
@@ -131,7 +130,6 @@
                   data-textalign="['top','top','top','top']"
                   data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
                   style="z-index: 7; white-space: nowrap;text-transform:left;">
-                     <div class="title">{{second.title}}</div>
                   </div>
                   
                   <div class="tp-caption tp-resizeme" 
@@ -263,7 +261,6 @@
                   data-textalign="['top','top','top','top']"
                   data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
                   style="z-index: 7; white-space: nowrap;text-transform:left;">
-                     <div class="text text-center"> <span class="theme_color">{{third.title}}</span></div>
                   </div>
                   
                   <div class="tp-caption" 
@@ -362,23 +359,113 @@
       </div>
   </section>
   <!--End Main Slider-->
-  
-  <!--Experiance Section-->
-  <section class="experiance-section" style="background-image:url('{{STATIC_URL}}web/images/background/1.png');">
+  <section class="choose-section">
     <div class="auto-container">
-        <div class="inner-content">
-            <!--Sec Title-->
-             <div class="sec-title centered">
-                <div class="icon-box"></div>
-                 <div class="title">Hakkımızda</div>
-                 <h2>{{about.title}}</h2>
+     
+        <!--Image Column-->
+         <div class="image-column">
+             <figure class="image">
+                 <img src="{% static  'web/images/resource/choose-inner.png' %}" alt="" />
+             </figure>
+             <!--Title Boxed-->
+             <div class="title-boxed">
+                 <div class="sec-title centered">
+                    <div class="icon-box"></div>
+                     <div class="title">Biz ne yapıyoruz ?</div>
+                     <h2>Bizi neden tercih etmelisiniz </h2>
+                 </div>
              </div>
-             <div class="text-content">
-                <div class="text">{{about.body|safe}}</div>
+         </div>
+        
+        <div class="row clearfix">
+         
+             <!--Column-->
+             <div class="column pull-left col-lg-4 col-md-6 col-sm-6 col-xs-12">
+             
+                 <!--Featured Block Two-->
+                 <div class="featured-block-two">
+                     <div class="inner-box">
+                         <div class="icon-box">
+                             <span class="icon flaticon-broccoli"></span>
+                         </div>
+                         <h3><a href="{% url 'web:per_view' %}">Güvenilir Hammadde Temiz Gıda</a></h3>
+                         <div class="text">Ürettiğimiz gıdaların hammaddelerini çoğunlukla kendimiz üretmeye çalışıyor ve zirai ilaç
+                           kullanmadan yetiştiricilik yapıyoruz. </div>
+                     </div>
+                 </div>
+                 
+                 <!--Featured Block Two-->
+                 <div class="featured-block-two">
+                     <div class="inner-box">
+                         <div class="icon-box">
+                             <span class="icon flaticon-apple-1"></span>
+                         </div>
+                         <h3><a href="{% url 'web:per_view' %}">Sağlıklı Doğal İçerik</a></h3>
+                         <div class="text">Ürünlerimizde koruyucu, renklendirici, kıvam arttırıcı, aroma verici vb yapay eklentilerin
+                           hiçbirini kullanmıyoruz.</div>
+                     </div>
+                 </div>
+                 
+                 <!--Featured Block Two-->
+                 <div class="featured-block-two">
+                     <div class="inner-box">
+                         <div class="icon-box">
+                             <span class="icon flaticon-food"></span>
+                         </div>
+                         <h3><a href="{% url 'web:per_view' %}">Ekolojik Dönüşüm Döngüsel Tarım</a></h3>
+                         <div class="text"> Ürünlerimizi yetiştirdiğimiz yerleri ziyaret edebilmenizden ve neyi nasıl ürettiğimizi tüm
+                           şeffaflığıyla gösterebilmemizden dolayı mutluluk duyuyoruz.  </div>
+                     </div>
+                 </div>
+                 
              </div>
+             
+             <!--Column-->
+             <div class="column pull-right col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                 
+                 <!--Featured Block Three-->
+                 <div class="featured-block-three">
+                     <div class="inner-box">
+                         <div class="icon-box">
+                             <span class="icon flaticon-bus-1"></span>
+                         </div>
+                         <h3><a href="{% url 'web:per_view' %}">Farklı küçük üreticileri destekleme</a></h3>
+                         <div class="text">Toprak kapasitesi ve iklim şartlarından dolayı üretemediğimiz hammaddemizi satın alırken,
+                           yine aynı felsefede üreticilik yapan yerli ve butik çiftçilerden tedarik sağlıyor, küçük üreticiyi
+                           destekliyoruz. </div>
+                     </div>
+                 </div>
+                 
+                 <!--Featured Block Three-->
+                 <div class="featured-block-three">
+                     <div class="inner-box">
+                         <div class="icon-box">
+                             <span class="icon flaticon-smartphone-1"></span>
+                         </div>
+                         <h3><a href="{% url 'web:per_view' %}">Üreticiden tüketiciye aracısız, hızlı iletişim </a></h3>
+                         <div class="text">Ürünlerimizi satın alma aşamasında ve sonrasında bizimle birebir ve hızlı iletişim kurabilme
+                           samimiyetine önem veriyoruz.</div>
+                     </div> 
+                 </div>
+                 
+                 <!--Featured Block Three-->
+                 <div class="featured-block-three">
+                     <div class="inner-box">
+                         <div class="icon-box">
+                             <span class="icon flaticon-farmer-1"></span>
+                         </div>
+                         <h3><a href="{% url 'web:per_view' %}">Üretimde şeffaflık</a></h3>
+                         <div class="text">Üretim sürecimizin tamamında doğa ve hayvan iyiliğini gözetiyoruz. </div>
+                     </div>
+                 </div>
+                 
+             </div>
+             
          </div>
      </div>
  </section>
+  <!--Experiance Section-->
+
   <!--End Experiance Section-->
   
   <!--Cart Section-->
@@ -458,113 +545,23 @@
       </div>
   </section>
   <!--End Featured Section-->
-  
+  <section class="experiance-section" style="background-image:url('{{STATIC_URL}}web/images/background/1.png');">
+    <div class="auto-container">
+        <div class="inner-content">
+            <!--Sec Title-->
+             <div class="sec-title centered">
+                <div class="icon-box"></div>
+                 <div class="title">Hakkımızda</div>
+                 <h2>{{about.title}}</h2>
+             </div>
+             <div class="text-content">
+                <div class="text">{{about.body|safe}}</div>
+             </div>
+         </div>
+     </div>
+ </section>
   <!--Choose Section-->
-  <section class="choose-section">
-     <div class="auto-container">
-      
-         <!--Image Column-->
-          <div class="image-column">
-              <figure class="image">
-                  <img src="{% static  'web/images/resource/choose-inner.png' %}" alt="" />
-              </figure>
-              <!--Title Boxed-->
-              <div class="title-boxed">
-                  <div class="sec-title centered">
-                     <div class="icon-box"></div>
-                      <div class="title">Biz ne yapıyoruz ?</div>
-                      <h2>Bizi neden tercih etmelisiniz </h2>
-                  </div>
-              </div>
-          </div>
-         
-         <div class="row clearfix">
-          
-              <!--Column-->
-              <div class="column pull-left col-lg-4 col-md-6 col-sm-6 col-xs-12">
-              
-                  <!--Featured Block Two-->
-                  <div class="featured-block-two">
-                      <div class="inner-box">
-                          <div class="icon-box">
-                              <span class="icon flaticon-broccoli"></span>
-                          </div>
-                          <h3><a href="{% url 'web:per_view' %}">Güvenilir Hammadde Temiz Gıda</a></h3>
-                          <div class="text">Ürettiğimiz gıdaların hammaddelerini çoğunlukla kendimiz üretmeye çalışıyor ve zirai ilaç
-                            kullanmadan yetiştiricilik yapıyoruz. </div>
-                      </div>
-                  </div>
-                  
-                  <!--Featured Block Two-->
-                  <div class="featured-block-two">
-                      <div class="inner-box">
-                          <div class="icon-box">
-                              <span class="icon flaticon-apple-1"></span>
-                          </div>
-                          <h3><a href="{% url 'web:per_view' %}">Sağlıklı Doğal İçerik</a></h3>
-                          <div class="text">Ürünlerimizde koruyucu, renklendirici, kıvam arttırıcı, aroma verici vb yapay eklentilerin
-                            hiçbirini kullanmıyoruz.</div>
-                      </div>
-                  </div>
-                  
-                  <!--Featured Block Two-->
-                  <div class="featured-block-two">
-                      <div class="inner-box">
-                          <div class="icon-box">
-                              <span class="icon flaticon-food"></span>
-                          </div>
-                          <h3><a href="{% url 'web:per_view' %}">Ekolojik Dönüşüm Döngüsel Tarım</a></h3>
-                          <div class="text"> Ürünlerimizi yetiştirdiğimiz yerleri ziyaret edebilmenizden ve neyi nasıl ürettiğimizi tüm
-                            şeffaflığıyla gösterebilmemizden dolayı mutluluk duyuyoruz.  </div>
-                      </div>
-                  </div>
-                  
-              </div>
-              
-              <!--Column-->
-              <div class="column pull-right col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                  
-                  <!--Featured Block Three-->
-                  <div class="featured-block-three">
-                      <div class="inner-box">
-                          <div class="icon-box">
-                              <span class="icon flaticon-bus-1"></span>
-                          </div>
-                          <h3><a href="{% url 'web:per_view' %}">Farklı küçük üreticileri destekleme</a></h3>
-                          <div class="text">Toprak kapasitesi ve iklim şartlarından dolayı üretemediğimiz hammaddemizi satın alırken,
-                            yine aynı felsefede üreticilik yapan yerli ve butik çiftçilerden tedarik sağlıyor, küçük üreticiyi
-                            destekliyoruz. </div>
-                      </div>
-                  </div>
-                  
-                  <!--Featured Block Three-->
-                  <div class="featured-block-three">
-                      <div class="inner-box">
-                          <div class="icon-box">
-                              <span class="icon flaticon-smartphone-1"></span>
-                          </div>
-                          <h3><a href="{% url 'web:per_view' %}">Üreticiden tüketiciye aracısız, hızlı iletişim </a></h3>
-                          <div class="text">Ürünlerimizi satın alma aşamasında ve sonrasında bizimle birebir ve hızlı iletişim kurabilme
-                            samimiyetine önem veriyoruz.</div>
-                      </div> 
-                  </div>
-                  
-                  <!--Featured Block Three-->
-                  <div class="featured-block-three">
-                      <div class="inner-box">
-                          <div class="icon-box">
-                              <span class="icon flaticon-farmer-1"></span>
-                          </div>
-                          <h3><a href="{% url 'web:per_view' %}">Üretimde şeffaflık</a></h3>
-                          <div class="text">Üretim sürecimizin tamamında doğa ve hayvan iyiliğini gözetiyoruz. </div>
-                      </div>
-                  </div>
-                  
-              </div>
-              
-          </div>
-      </div>
-  </section>
+
   <!--End Choose Section-->
   
   <!--Call To Action Section-->
