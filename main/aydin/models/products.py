@@ -115,11 +115,13 @@ class Klavuz(TimeStampedModel):
         return self.name
 class ProductCategoryTR(TimeStampedModel):
     class Meta:
-        verbose_name = _(" Ürünler  Kategori")
-        verbose_name_plural = _(" Ürünler Kategori ")
+        verbose_name = _(" 1.1-Ürünler  Kategori")
+        verbose_name_plural = _("1.1-Ürünler Kategori ")
         ordering = ("-created",)
     name = models.CharField(_("Categori İsmi"), max_length=200,)
-    #parent_category = models.ForeignKey(SubCategoryTR, null=True, blank=True,on_delete=models.CASCADE)
+    description = RichTextUploadingField(_("Meta Description"),blank=True, null=True)
+
+
     def __str__(self):
         return self.name
 class ProductsTr(TimeStampedModel):
@@ -131,7 +133,7 @@ class ProductsTr(TimeStampedModel):
     title    = models.CharField(_("Başlık"), max_length=200,)
     body     = RichTextUploadingField(_("Ürün Yazı"), blank=True)
     image    = models.ImageField(_("Ürün Resim"), upload_to=settings.DEFAULT_BLOG_FOLDER, blank=True, default=settings.DEFAULT_BLOG_IMAGE)
-    slider    = models.ManyToManyField(ProductSlider, verbose_name=_("Ürün Slider"),blank=True, null=True)
+    #slider    = models.ManyToManyField(ProductSlider, verbose_name=_("Ürün Slider"),blank=True, null=True)
     tek_body   = RichTextUploadingField(_("Teknik Özellikler"), blank=True)
     subcategory = models.ForeignKey(ProductCategoryTR, verbose_name=_(" Kategori"),blank=True,null=True,on_delete=models.CASCADE)
     kod    = models.CharField(_("Ürün Kodu"), max_length=200,blank=True, null=True,)

@@ -33,6 +33,8 @@ class HomeView(View):
         projen = Projects.objects.all()
         protrlist = ProductsTr.objects.all()
         protrlist = paginate(objects=protrlist, per_page=6, page=request.GET.get("page"))
+        categories = ProductCategoryTR.objects.all()
+        cat3 = ProductCategoryTR.objects.all()[:3]
 
 
         self.ctx ={
@@ -47,6 +49,8 @@ class HomeView(View):
             'bloglist':bloglist,
             "about" : about,
             "protrlist" : protrlist,
+            "categories" : categories,
+            "cat3" : cat3,
 
         }
         return render(request, self.template_name,self.ctx)

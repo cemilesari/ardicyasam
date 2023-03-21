@@ -70,6 +70,36 @@ class ProductDetailTrView(View):
         return render(request, self.template_name, self.ctx)
     def post(self, request, *args, **kwargs):
         return render(request, self.template_name, self.ctx)
+    
+class ProductCategoryTrView(View):
+    template_name= "web/pages/product-cat-tr.html"
+    ctx = {}
+    def get(self, request, *args, **kwargs):
+        categories = ProductCategoryTR.objects.all()
+        self.ctx = {
+            'categories' : categories,
+        }
+        return render(request, self.template_name, self.ctx)
+    def post(self, request, *args, **kwargs):
+        return render(request, self.template_name, self.ctx)
+    
+
+class ProductCategoryDetailTrView(View):
+    template_name= "web/pages/product-cat-tr-detail.html"
+    ctx = {}
+    def get(self, request, *args, **kwargs):
+        ster_tr_id = request.resolver_match.kwargs.get('id')
+        category = ProductCategoryTR.objects.filter(id=ster_tr_id).first()
+
+        products = ProductsTr.objects.filter(subcategory__id=ster_tr_id)
+        self.ctx = {
+            "category" : category,
+            'protrlist' : products,
+        }
+        return render(request, self.template_name, self.ctx)
+    def post(self, request, *args, **kwargs):
+        return render(request, self.template_name, self.ctx)
+    
 class ProductTrDISBView(View):
     template_name= "web/pages/dis.html"
     ctx = {}

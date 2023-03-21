@@ -1,0 +1,84 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% block title %}{% trans "ÜRÜNLERİMİZ" %}{% endblock title %}
+{% block extracss %}
+
+{% endblock extracss %}
+{% block content %}
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url('{{STATIC_URL}}web/images/background/8.jpg');">
+    	<div class="auto-container">
+        	<div class="inner-box">
+                <h1>Ürünler</h1>
+                <ul class="bread-crumb">
+                	<li><a href="{% url 'web:welcome_view' %}">Ana Sayfa</a></li>
+                    <li>Ürünler</li>
+                    <li>{{category.name}}</li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+    
+    <!--Shop Section-->
+    <section class="shop-section">
+    	<div class="auto-container">
+        	<!--Filter Bar-->
+        	<div class="filter-bar clearfix">
+            	<div class="title pull-left">{{category.name}}  Kategori Ürünlerimiz</div>
+                <div class="filters pull-right">
+                
+                	
+                    <aside class="sidebar">
+                        <div class="sidebar-widget search-box">
+                            <form method="post" action="http://t.commonsupport.com/rotterdam/contact.html">
+                                <div class="form-group">
+                                    <input type="search" name="search-field" value="" placeholder="Search..." required>
+                                    <button type="submit"><span class="icon fa fa-search"></span></button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </aside>
+                    <!-- Search Form -->
+                  
+                    
+                </div>
+            </div>
+            
+            <div class="row clearfix">
+            	
+
+                {% for prod in  protrlist %}
+                <!--Shop Item-->
+                <div class="shop-item col-md-4 col-sm-6 col-xs-12">
+                    <div class="inner-box">
+                        <div class="image-box"><img src="{{prod.image.url}}" alt="">
+                            <div class="overlay-box">
+                                <!--lower box-->
+                                <div class="lower-box">
+                                    <h3><a href="{% url 'web:per_detail_view' prod.slug %}">{{prod.title}}</a></h3>
+                                    <span class="price">{{prod.fiyat}} ₺  </span>
+                                    <a href="{% url 'web:per_detail_view' prod.slug %}" class="theme-btn btn-style-one">&ensp;Detay</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                {% endfor %}        
+
+            </div>
+            
+            <!-- Styled Pagination -->
+            {% include 'web/includes/paginate.html' with page_obj=protrlist %}
+
+            
+        </div>
+    </section>
+    <!--End Shop Section-->
+{% endblock content %}
+{% block extrajs %}
+
+{% endblock extrajs %}

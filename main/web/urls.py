@@ -21,9 +21,10 @@ urlpatterns = [
                         
 	path('about/',                                                 view=AboutView.as_view(),                    name='about_en'),
 	path('hakkimizda/',                                            view=AboutTRView.as_view(),                  name='about'),
-                        
 	path('iletisim/',                                              view=IletisimSup.as_view(),                  name='contact'),
 	path('contact/',                                               view=BecomeSupport.as_view(),                name='contact_en'),
+	path('urun-kategorileri',                               view=ProductCategoryTrView.as_view(),         name='prod-cat'),
+	path('urun-kategorileri/<id>/',                               view=ProductCategoryDetailTrView.as_view(),         name='prod-cat-det'),
 
 	path('urunler/',                     		                   view=ProductTrView.as_view(),                name='per_view'),
 	path('urun-detay/<slug:slug>/',      		                   view=ProductDetailTrView.as_view(),          name='per_detail_view'),

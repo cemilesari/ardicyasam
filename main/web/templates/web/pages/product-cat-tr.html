@@ -1,0 +1,36 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% load embed_video_tags %}
+{% block title %}{{pro.title|upper}}{% endblock title %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+
+
+
+
+<section class="services-section">
+    <div class="auto-container">
+        <!--Sec Title-->
+        <div class="sec-title centered">
+            <div class="icon-box"></div>
+            <div class="title">Kategorilerimiz</div>
+        </div>
+        
+        <div class="row clearfix">
+        
+            {% for a in categories %}
+                  <div class="featured-block col-md-4 col-sm-6 col-xs-12">
+                     <div class="inner-box">
+                              <h2><a href="{% url 'web:prod-cat-det' a.id %}">{{ a.name }}</a></h2>
+                              <div style="min-height: 300px;" class="text">{{a.description|safe}}</div>
+                          </div>
+                  </div>
+                  {% endfor %}
+            
+        </div>
+        
+    </div>
+</section>
+
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

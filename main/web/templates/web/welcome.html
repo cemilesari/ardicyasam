@@ -78,10 +78,10 @@
                   data-frames='[{"from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
                   style="z-index: 7; white-space: nowrap;text-transform:left;">
                      <ul class="slider-list">
-                         <li>Fruits</li>
-                          <li>Vegetables</li>
-                          <li>Food</li>
-                          <li>Breads</li>
+                        {% for cat in categories %}
+                         <li>{{cat.name}}</li>
+                         {% endfor %}
+                       
                       </ul>
                   </div>
                   
@@ -190,12 +190,12 @@
                   data-textalign="['top','top','top','top']"
                   data-frames='[{"from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
                   style="z-index: 7; white-space: nowrap;text-transform:left;">
-                     <ul class="slider-list">
-                         <li>Fruits</li>
-                          <li>Vegetables</li>
-                          <li>Food</li>
-                          <li>Breads</li>
-                      </ul>
+                  <ul class="slider-list">
+                    {% for cat in categories %}
+                     <li>{{cat.name}}</li>
+                     {% endfor %}
+                   
+                  </ul>
                   </div>
                   
                   <div class="tp-caption" 
@@ -323,10 +323,10 @@
                   data-frames='[{"from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
                   style="z-index: 7; white-space: nowrap;text-transform:left;">
                      <ul class="slider-list">
-                         <li>Fruits</li>
-                          <li>Vegetables</li>
-                          <li>Food</li>
-                          <li>Breads</li>
+                        {% for cat in categories %}
+                         <li>{{cat.name}}</li>
+                         {% endfor %}
+                       
                       </ul>
                   </div>
                   
@@ -476,17 +476,15 @@
              <!--Column-->
               <div class="content-column pull-right col-md-6 col-sm-12 col-xs-12">
                  <div class="inner-column">
-                     <h3>Natural Vegitabels</h3>
-                      <h2>$35.00</h2>
-                      <div class="text">Nullam sit amet turpis ornare, pulvinar lectus in, cursus mi. Duis et unc eu li duis sodales tempor pulvinar.</div>
-                      <div class="category">Category : <span>Vegetable Box</span></div>
-                      <a href="shop-single.html" class="theme-btn btn-style-one"> Detaylı Bilgi</a>
+                     <h3>Doğal Lezzetler</h3>
+                      <div class="text">Her geçen gün daha fazla insan organik yaşam tarzlarına yöneliyor ve sağlıklarını iyileştirmeye çalışıyor, bu noktada bizim ürünlerimiz devreye giriyor.</div>
+                      <a href="{% url 'web:per_view' %}" class="theme-btn btn-style-one"> Ürünlerimiz</a>
                   </div>
               </div>
               <!--Image Column-->
              <div class="image-column pull-left col-md-6 col-sm-12 col-xs-12">
                  <figure class="image">
-                     <img style="    margin-top: 30px;" src="{% static  'web/images/resource/7030.jpeg' %}" alt="" />
+                     <img style="    margin-top: 30px;" src="{% static  'web/images/resource/front.png' %}" alt="" />
                   </figure>
               </div>
           </div>
@@ -500,46 +498,23 @@
          <div class="featured-inner">
              <div class="row clearfix">
                  <!--Featured Block-->
-                  <div class="featured-block col-md-4 col-sm-6 col-xs-12">
-                     <div class="inner-box">
-                         <div class="content">
-                             <div class="icon-box">
-                                 <span class="icon"><img src="{% static  'web/images/resource/featured-icon-1.png' %}" alt="" /></span>
-                              </div>
-                              <div class="title">Fariming Process</div>
-                              <h2><a href="{% url 'web:per_view' %}">Farm Fresh</a></h2>
-                              <div class="text">Cras ultricies mi eu turpis hen...</div>
-                          </div>
-                      </div>
-                  </div>
-                  
+              
                   <!--Featured Block-->
+                  {% for a in cat3 %}
                   <div class="featured-block col-md-4 col-sm-6 col-xs-12">
                      <div class="inner-box">
                          <div class="content">
                              <div class="icon-box">
                                  <span class="icon"><img src="{% static  'web/images/resource/featured-icon-2.png' %}" alt="" /></span>
                               </div>
-                              <div class="title">Organic Vegetables</div>
-                              <h2><a href="services.html">Fresh Vegetables</a></h2>
-                              <div class="text">Cras ultricies mi eu turpis hen...</div>
+                              <h2><a href="services.html">{{ a.name }}</a></h2>
+                              <div class="text">{{a.description|safe|truncatechars:80}}</div>
                           </div>
                       </div>
                   </div>
+                  {% endfor %}
                   
-                  <!--Featured Block-->
-                  <div class="featured-block col-md-4 col-sm-6 col-xs-12">
-                     <div class="inner-box">
-                         <div class="content">
-                             <div class="icon-box">
-                                 <span class="icon"><img src="{% static  'web/images/resource/featured-icon-3.png' %}" alt="" /></span>
-                              </div>
-                              <div class="title">Organic Fruits</div>
-                              <h2><a href="services.html">Fresh Fruits</a></h2>
-                              <div class="text">Cras ultricies mi eu turpis hen...</div>
-                          </div>
-                      </div>
-                  </div>
+               
                   
               </div>
           </div>
@@ -648,7 +623,7 @@
          <!--Sec Title-->
           <div class="sec-title centered">
              <div class="icon-box"></div>
-              <div class="title"> Mükemmel Ekibimiz</div>
+              <div class="title">  Ekibimiz</div>
               <h2>Ekibimiz</h2>
               <div class="text">As more and more people are turning to organic lifestyles & trying improve their health As more and more people </div>
           </div>
