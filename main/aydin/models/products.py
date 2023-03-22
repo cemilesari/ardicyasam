@@ -121,6 +121,7 @@ class ProductCategoryTR(TimeStampedModel):
     name = models.CharField(_("Categori İsmi"), max_length=200,)
     description = RichTextUploadingField(_(" Açıklama"),blank=True, null=True)
     ordering = models.PositiveIntegerField(null=True, blank=True, default=1)
+    image    = models.ImageField(_(" Resim"), upload_to=settings.DEFAULT_BLOG_FOLDER, blank=True, default=settings.DEFAULT_BLOG_IMAGE)
 
 
     def __str__(self):
