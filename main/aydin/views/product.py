@@ -75,7 +75,7 @@ class ProductCategoryTrView(View):
     template_name= "web/pages/product-cat-tr.html"
     ctx = {}
     def get(self, request, *args, **kwargs):
-        categories = ProductCategoryTR.objects.all()
+        categories = ProductCategoryTR.objects.all().order_by('ordering')
         self.ctx = {
             'categories' : categories,
         }
@@ -83,7 +83,31 @@ class ProductCategoryTrView(View):
     def post(self, request, *args, **kwargs):
         return render(request, self.template_name, self.ctx)
     
+class TeamsView(View):
+    template_name= "web/pages/teams-tr.html"
+    ctx = {}
+    def get(self, request, *args, **kwargs):
+        categories = Teams.objects.all().order_by('ordering')
+        self.ctx = {
+            'teams' : categories,
+        }
+        return render(request, self.template_name, self.ctx)
+    def post(self, request, *args, **kwargs):
+        return render(request, self.template_name, self.ctx)
 
+class TeamsDetailView(View):
+    template_name= "web/pages/teams-tr-detail.html"
+    ctx = {}
+    def get(self, request, *args, **kwargs):
+        ster_tr_id = request.resolver_match.kwargs.get('id')
+        pro = get_object_or_404(Teams, id=ster_tr_id)
+        self.ctx = {
+            'team' : pro,
+        }
+        return render(request, self.template_name, self.ctx)
+    def post(self, request, *args, **kwargs):
+        return render(request, self.template_name, self.ctx)
+    
 class ProductCategoryDetailTrView(View):
     template_name= "web/pages/product-cat-tr-detail.html"
     ctx = {}

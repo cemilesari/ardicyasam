@@ -119,12 +119,29 @@ class ProductCategoryTR(TimeStampedModel):
         verbose_name_plural = _("1.1-Ürünler Kategori ")
         ordering = ("ordering",)
     name = models.CharField(_("Categori İsmi"), max_length=200,)
-    description = RichTextUploadingField(_("Meta Description"),blank=True, null=True)
+    description = RichTextUploadingField(_(" Açıklama"),blank=True, null=True)
     ordering = models.PositiveIntegerField(null=True, blank=True, default=1)
 
 
     def __str__(self):
         return self.name
+    
+
+class Teams(TimeStampedModel):
+    class Meta:
+        verbose_name = _(" 6-Ekibimiz")
+        verbose_name_plural = _("6- Ekibimiz")
+        ordering = ("ordering",)
+    name = models.CharField(_("İsim"), max_length=200,)
+    name1 = models.CharField(_("Görevi"), max_length=200,)
+    image    = models.ImageField(_(" Resim"), upload_to=settings.DEFAULT_BLOG_FOLDER, blank=True, default=settings.DEFAULT_BLOG_IMAGE)
+    description = RichTextUploadingField(_("Detaylı Bilgi"),blank=True, null=True)
+    ordering = models.PositiveIntegerField(null=True, blank=True, default=1)
+
+
+    def __str__(self):
+        return self.name
+    
 class ProductsTr(TimeStampedModel):
     class Meta:
         verbose_name = _("1-Ürün ")

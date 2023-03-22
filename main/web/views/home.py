@@ -34,6 +34,8 @@ class HomeView(View):
         protrlist = ProductsTr.objects.all()
         protrlist = paginate(objects=protrlist, per_page=6, page=request.GET.get("page"))
         categories = ProductCategoryTR.objects.all().order_by('ordering')
+        teams = Teams.objects.all().order_by('ordering')[:3]
+
         cat3 = ProductCategoryTR.objects.all()[:3]
 
 
@@ -51,6 +53,7 @@ class HomeView(View):
             "protrlist" : protrlist,
             "categories" : categories,
             "cat3" : cat3,
+            "teams" : teams
 
         }
         return render(request, self.template_name,self.ctx)

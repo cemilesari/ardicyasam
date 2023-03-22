@@ -628,119 +628,26 @@
           </div>
           <div class="row clearfix">
              
-              <!--Team Member-->
-              <div class="team-member col-md-4 col-sm-6 col-xs-12">
-                 <div class="inner-box">
-                     <div class="image-box">
-                         <figure class="image"><img src="{% static  'web/images/resource/image6.jpg' %}" alt=""></figure>
-                         
-                      </div>
-                      <div class="lower-content">
-                         <h4><a href="team-single.html">Sündüs Burcu Nalbantoğlu</a></h4>
-                          <div class="designation"> Ardıç Yaşam Ailesi’nin bostan işleri sorumlusu ve halkla ilişkileridir. </div>
-                          <div class="text">  2016 yılında isim hakkını aldığı ve aslen Ahşap Tasarım markası olan Ardıç Yaşam’ı gıda üretim işine çevirme fikrinin zeminini ailesi ile birlikte kurmuştur.
-                        </div>
-                      </div>
-                  </div>
-              </div>
-              
-              <!--Team Member-->
-              <div class="team-member col-md-4 col-sm-6 col-xs-12">
-                 <div class="inner-box">
-                     <div class="image-box">
-                         <figure class="image"><img src="{% static  'web/images/resource/image3.jpg' %}" alt=""></figure>
-                         
-                      </div>
-                      <div class="lower-content">
-                         <h4><a href="team-single.html">Barış Nalbantoğlu</a></h4>
-                          <div class="designation">Ardıç Yaşam Ailesinin dışarıdan transfer aldığı üyesi, her şeyidir.</div>
-                          <div class="text">Üretimin her ağındadır. Özellikle kargolama alanımızda sağlam paketleme deyince artık akla o gelir. :)
-                        </div>
-                      </div>
-                  </div>
-              </div>
-              
-              <!--Team Member-->
-              <div class="team-member col-md-4 col-sm-6 col-xs-12">
-                 <div class="inner-box">
-                     <div class="image-box">
-                         <figure class="image"><img src="{% static  'web/images/resource/image10.jpg' %}" alt=""></figure>
-                         <a href="#"><span class="fa fa-instagram"></span></a></li>
-                          </ul>
-                      </div>
-                      <div class="lower-content">
-                         <h4><a href="team-single.html">
-                            Şenay Uzar
-                            </a></h4>
-                          <div class="designation">Ardıç Yaşam Ailesinin baş ustası ve annesi</div>
-                          <div class="text">
-                            Mengen’in şirin bir köyünde doğup büyümüş, annesinin kadim geleneklerini ve ata tohumlarını
-                            sürdürmüş, doğa ve hayvanlar ile iç içe yaşamıştır.
-                             </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="team-member col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><img src="{% static  'web/images/resource/image2.jpg' %}" alt=""></figure>
+            {% for team in teams %}
+            <!--Team Member-->
+            <div class="team-member col-md-4 col-sm-6 col-xs-12">
+               <div class="inner-box">
+                   <div class="image-box">
+                       <figure class="image"><img src="{{team.image.url}}" alt=""></figure>
                        
-                     </div>
-                     <div class="lower-content">
-                        <h4><a href="team-single.html">
-                            Mehmet Ali Uzar
-                        </a></h4>
-                         <div class="designation">Ardıç Yaşam Ailesinin eli, kolu ve babasıdır.</div>
-                         <div class="text"> En ince işçilikler, geleneksel tariflerin formülasyonu ondan sorulur.
-
-
-                            </div>
-                     </div>
-                 </div>
-             </div>
+                    </div>
+                    <div class="lower-content">
+                       <h4><a href="{% url 'web:team-det' team.id %}">{{team.name}}</a></h4>
+                        <div class="designation"> {{team.name1}} </div>
+                        <div class="text"> {{team.description|safe|truncatechars:100}}
+                      </div>
+                    </div>
+                </div>
+            </div>
+            
+           {% endfor %}
               
-             <div class="team-member col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><img src="{% static  'web/images/resource/image5.jpg' %}" alt=""></figure>
-                         
-                     </div>
-                     <div class="lower-content">
-                        <h4><a href="team-single.html">
-                            Barışcan Uzar 
-
-                        </a></h4>
-                         <div class="designation">Ardıç Yaşam Ailesinin en küçüğü, en çalışkanıdır.
-                        </div>
-                         <div class="text"> Ardıç Yaşam ürünlerinin son tüketiciye sunulması aşamasında lezzet testi uzmanıdır.
-
-
-
-                            </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="team-member col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><img src="{% static  'web/images/resource/image9.jpg' %}" alt=""></figure>
-                       
-                     </div>
-                     <div class="lower-content">
-                        <h4><a href="team-single.html">
-                            Zülal Aydın
-
-                        </a></h4>
-                         <div class="designation">Ardıç Yaşam’ın Trabzon Şubesi</div>
-                         <div class="text"> Ardıç Yaşam bünyesinde gördüğünüz el boyaması, el
-                            işlemesi ve çoğu el örgüsü Yaşam Gereçlerimizin de tasarımcısıdır.
-                            
-
-
-                            </div>
-                     </div>
-                 </div>
-             </div>
+           
           </div>
       </div>
   </section>

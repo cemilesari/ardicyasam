@@ -1,0 +1,71 @@
+{% extends "web/base.html" %}
+{% load static i18n %}
+{% load embed_video_tags %}
+{% block title %}{{pro.title|upper}}{% endblock title %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url('{{STATIC_URL}}web/images/background/8.jpg');">
+    	<div class="auto-container">
+        	<div class="inner-box">
+                <h1>Ürünler</h1>
+                <ul class="bread-crumb">
+                	<li><a href="{% url 'web:welcome_view' %}">Ana Sayfa</a></li>
+                    <li>Ekibimiz</li>
+                    <li>{{team.name}}</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+
+
+
+
+<section class="team-single-section">
+    <div class="auto-container">
+        <!--Team Detail-->
+        <div class="team-detail">
+            <div class="row clearfix">
+            
+                <!--Content Column-->
+                <div class="content-column col-md-7 col-sm-12 col-xs-12">
+                    <div class="inner-box">
+                        <h2>{{team.name}}</h2>
+                        <div class="title">{{team.name1}}</div>
+                        <!--Social Icon Two-->
+                      
+                        <!--Skills Box-->
+                        <div class="skills-box">
+                            <p>{{team.description|safe}}</p>
+                            <!--Progress Levels-->
+                            <div class="progress-levels">
+                                        
+                               
+                           
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Image Column-->
+                <div class="image-column col-md-5 col-sm-12 col-xs-12">
+                    <div class="image">
+                        <img src="{{team.image.url}}" alt="">
+                    </div>
+                </div>
+                
+            </div>
+          
+        </div>
+        
+     
+        
+    </div>
+</section>
+
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

@@ -78,3 +78,10 @@ class ProjectsTRAdmin(admin.ModelAdmin):
 @admin.register(ProductCategoryTR)
 class ProductCategoryTRAdmin(admin.ModelAdmin):
 	list_display = ("name",)
+
+
+
+@admin.register(Teams)
+class TeamsAdmin(admin.ModelAdmin):
+	list_display = ("name",)
+
