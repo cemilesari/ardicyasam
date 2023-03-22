@@ -1681,8 +1681,9 @@ img{
 }
 
 .featured-block .inner-box{
-	position:relative;
-	padding:30px 15px 30px 0px;
+	position: relative;
+    padding: 11px 11px 11px 0px;
+    margin-left: 20px;
 }
 
 .featured-block .inner-box .content{
