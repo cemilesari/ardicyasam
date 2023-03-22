@@ -2071,6 +2071,7 @@ img{
 	display:block;
 	text-align:center;
 	padding:0px 0px 0px;
+	min-height: 53px;
 }
 
 .shop-item .inner-box .lower-box h3{
