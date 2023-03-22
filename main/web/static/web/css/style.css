@@ -1681,14 +1681,16 @@ img{
 }
 
 .featured-block .inner-box{
-	position:relative;
-	padding:30px 15px 30px 0px;
-	border-right:1px solid #ececec;
+	position: relative;
+    padding: 11px 11px 11px 0px;
+    margin-left: 20px;
+    border-right: 1px solid #ececec;
+
 }
 
 .featured-block .inner-box .content{
 	position:relative;
-	padding-left:100px;
+	padding-left:60px;
 }
 
 .featured-block .inner-box .content .icon-box{

@@ -503,15 +503,14 @@
                  <!--Featured Block-->
               
                   <!--Featured Block-->
-                  {% for a in cat3 %}
+                  {% for a in categories %}
                   <div class="featured-block col-md-4 col-sm-6 col-xs-12">
                      <div class="inner-box">
                          <div class="content">
                              <div class="icon-box">
-                                 <span class="icon"><img src="{% static  'web/images/resource/featured-icon-2.png' %}" alt="" /></span>
+                                 <span class="icon"><img style="width: 40%;" src="{% static  'web/images/resource/leaf-2.png' %}" alt="" /></span>
                               </div>
-                              <h2><a href="services.html">{{ a.name }}</a></h2>
-                              <div class="text">{{a.description|safe|truncatechars:80}}</div>
+                              <h2><a href="{% url 'web:prod-cat-det' a.id %}">{{ a.name }}</a></h2>
                           </div>
                       </div>
                   </div>
