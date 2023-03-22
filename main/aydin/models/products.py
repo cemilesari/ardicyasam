@@ -117,9 +117,10 @@ class ProductCategoryTR(TimeStampedModel):
     class Meta:
         verbose_name = _(" 1.1-Ürünler  Kategori")
         verbose_name_plural = _("1.1-Ürünler Kategori ")
-        ordering = ("-created",)
+        ordering = ("ordering",)
     name = models.CharField(_("Categori İsmi"), max_length=200,)
     description = RichTextUploadingField(_("Meta Description"),blank=True, null=True)
+    ordering = models.PositiveIntegerField(null=True, blank=True, default=1)
 
 
     def __str__(self):

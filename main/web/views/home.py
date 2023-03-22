@@ -33,7 +33,7 @@ class HomeView(View):
         projen = Projects.objects.all()
         protrlist = ProductsTr.objects.all()
         protrlist = paginate(objects=protrlist, per_page=6, page=request.GET.get("page"))
-        categories = ProductCategoryTR.objects.all()
+        categories = ProductCategoryTR.objects.all().order_by('ordering')
         cat3 = ProductCategoryTR.objects.all()[:3]
 
 
