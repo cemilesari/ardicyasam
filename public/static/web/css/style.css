@@ -2077,6 +2077,8 @@ img{
 	font-weight:400;
 	margin-bottom:8px;
 	text-transform:uppercase;
+	min-height: 53px;
+
 }
 
 .shop-item .inner-box .lower-box h3 a{
@@ -2332,7 +2334,6 @@ img{
 	position:relative;
 	font-size:14px;
 	color:#85c977;
-	text-transform:capitalize;
 }
 
 .team-member .lower-content .text{
