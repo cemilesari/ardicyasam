@@ -9,7 +9,7 @@
     <section class="page-title" style="background-image:url('{{STATIC_URL}}web/images/background/8.jpg');">
     	<div class="auto-container">
         	<div class="inner-box">
-                <h1>Ürünler</h1>
+                <h1>Ekibimiz</h1>
                 <ul class="bread-crumb">
                 	<li><a href="{% url 'web:welcome_view' %}">Ana Sayfa</a></li>
                     <li>Ekibimiz</li>
@@ -45,7 +45,7 @@
                      <div class="lower-content">
                         <h4><a href="{% url 'web:team-det' team.id %}">{{team.name}}</a></h4>
                          <div class="designation"> {{team.name1}} </div>
-                         <div class="text"> {{team.description|safe|truncatechars:100}}
+                         <div class="text"> {{team.description|safe|truncatechars:70}}
                        </div>
                      </div>
                  </div>
