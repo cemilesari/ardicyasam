@@ -22,8 +22,8 @@
                   <div class="featured-block col-md-4 col-sm-6 col-xs-12">
                      <div class="inner-box">
                               <h2><a href="{% url 'web:prod-cat-det' a.id %}">{{ a.name }}</a></h2>
-                              <div style="min-height: 300px;" class="text">{{a.description|safe}}</div>
-                              <img src="{{a.image.url}}">
+                              <div style="min-height: 200px;" class="text">{{a.description|safe}}</div>
+                              <img style="max-height: 400px;min-height: 400px" src="{{a.image.url}}">
                           </div>
                   </div>
                   {% endfor %}
