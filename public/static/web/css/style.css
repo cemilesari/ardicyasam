@@ -5605,3 +5605,7 @@ img{
 	height:2px;
 	background-color:#85c977;
 }
+
+.mobile-shop_header{
+	display: none;
+}

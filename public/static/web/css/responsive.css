@@ -462,6 +462,9 @@
 		visibility:visible !important;
 		margin:0px;
 	}
+	.mobile-shop{
+		display: none!important;
+	}
 	
 	.main-menu .navbar-collapse > .navigation > li:first-child{
 		border-top:none !important;	

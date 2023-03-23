@@ -641,13 +641,13 @@
          <!--Sec Title-->
           <div class="sec-title centered">
              <div class="icon-box"></div>
-              <div class="title">  Ekibimiz</div>
-              <a href="{% url 'web:teams' %}"><h2>Ekibimiz</h2></a>
-              <div class="text">Çekirdek ailemiz hakkında detaylar burada!  </div>
+              <div class="title">  Bloglarımız</div>
+              <a href="{% url 'web:blog_view' %}"><h2>Bloglarımız</h2></a>
+              <div class="text">Ardıç Yaşam Bloglar  </div>
           </div>
           <div class="row clearfix">
              
-            {% for team in teams %}
+            {% for team in bloglist_tr %}
             <!--Team Member-->
             <div class="team-member col-md-4 col-sm-6 col-xs-12">
                <div class="inner-box">
@@ -656,9 +656,10 @@
                        
                     </div>
                     <div class="lower-content">
-                       <h4><a href="{% url 'web:team-det' team.id %}">{{team.name}}</a></h4>
-                        <div class="designation"> {{team.name1}} </div>
-                        <div class="text"> {{team.description|safe|truncatechars:70}}
+                       <h4><a href="{% url 'web:blog_detail' team.slug %}">{{team.title}}</a></h4>
+                        <div class="text"> {{team.body|safe|truncatechars:70}}
+                            <a href="{% url 'web:blog_detail' team.slug %}" class="theme-btn btn-style-one">&ensp;Detay</a>
+
                       </div>
                     </div>
                 </div>
@@ -678,51 +679,29 @@
          <!--Sec Title-->
           <div class="sec-title light centered">
              <div class="icon-box"></div>
-              <div class="title">Müşteri Yorumlarımız</div>
-              <h2>Müşterilerimiz</h2>
-              <div class="text">As more and more people are turning to organic lifestyles & trying improve their health As more and more people </div>
+             <div class="title">  Ekibimiz</div>
+             <a href="{% url 'web:teams' %}"><h2>Ekibimiz</h2></a>
+             <div class="text">Çekirdek ailemiz hakkında detaylar burada!  </div>
           </div>
           
           <div class="single-item-carousel owl-carousel owl-theme">
           
+            {% for team in teams %}
               <!--Testimonail Style One-->
               <div class="testimonail-style-one">
                   <div class="inner-box">
                       <div class="image-box">
-                          <img src="{% static  'web/images/resource/author-1.jpg' %}" alt="" />
+                          <img src="{{team.image.url}}" alt="" />
                       </div>
-                      <div class="text">Duis aute irure dolor in reprehenderit voluptate velit esse seds cillum dolore eu fugiat nulla pariatur exceptin reprehenderit voluptate velit </div>
-                      <h2>Dwyne Johnson</h2>
-                      <div class="designation">Regular Customer</div>
+                      <div class="text"> {{team.description|safe|truncatechars:200}}
+                        <h2><a href="{% url 'web:team-det' team.id %}">{{team.name}}</a></h2>
+
+                        <div class="designation"> {{team.name1}} </div>
                       <span class="quote-icon flaticon-left-quote-1"></span>
                   </div>
               </div>
-              
-              <!--Testimonail Style One-->
-              <div class="testimonail-style-one">
-                  <div class="inner-box">
-                      <div class="image-box">
-                          <img src="{% static  'web/images/resource/author-1.jpg' %}" alt="" />
-                      </div>
-                      <div class="text">Duis aute irure dolor in reprehenderit voluptate velit esse seds cillum dolore eu fugiat nulla pariatur exceptin reprehenderit voluptate velit </div>
-                      <h2>Dwyne Johnson</h2>
-                      <div class="designation">Regular Customer</div>
-                      <span class="quote-icon flaticon-left-quote-1"></span>
-                  </div>
-              </div>
-              
-              <!--Testimonail Style One-->
-              <div class="testimonail-style-one">
-                  <div class="inner-box">
-                      <div class="image-box">
-                          <img src="{% static  'web/images/resource/author-1.jpg' %}" alt="" />
-                      </div>
-                      <div class="text">Duis aute irure dolor in reprehenderit voluptate velit esse seds cillum dolore eu fugiat nulla pariatur exceptin reprehenderit voluptate velit </div>
-                      <h2>Dwyne Johnson</h2>
-                      <div class="designation">Regular Customer</div>
-                      <span class="quote-icon flaticon-left-quote-1"></span>
-                  </div>
-              </div>
+              {% endfor %}
+            
               
           </div>
       </div>
