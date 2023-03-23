@@ -695,7 +695,8 @@
                           <img src="{{team.image.url}}" alt="" />
                       </div>
                       <h2><a href="{% url 'web:team-det' team.id %}">{{team.name}}</a></h2><br>
-                      <div class="designation"> {{team.name1}} </div>
+                      <h5><a href="{% url 'web:team-det' team.id %}">{{team.name1}}</a></h5>
+
 
                       <div class="text"> {{team.description|safe|truncatechars:200}}
 
