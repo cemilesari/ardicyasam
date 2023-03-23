@@ -658,9 +658,10 @@
                     <div class="lower-content">
                        <h4><a href="{% url 'web:blog_detail' team.slug %}">{{team.title}}</a></h4>
                         <div class="text"> {{team.body|safe|truncatechars:70}}
-                            <a href="{% url 'web:blog_detail' team.slug %}" class="theme-btn btn-style-one">&ensp;Detay</a>
 
                       </div>
+                      <a href="{% url 'web:blog_detail' team.slug %}" class="theme-btn btn-style-one">&ensp;Detay</a>
+
                     </div>
                 </div>
             </div>
