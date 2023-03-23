@@ -684,27 +684,29 @@
              <div class="text">Çekirdek ailemiz hakkında detaylar burada!  </div>
           </div>
           
+          {% for team in teams %}
+
           <div class="single-item-carousel owl-carousel owl-theme">
           
-            {% for team in teams %}
               <!--Testimonail Style One-->
               <div class="testimonail-style-one">
                   <div class="inner-box">
                       <div class="image-box">
                           <img src="{{team.image.url}}" alt="" />
                       </div>
-                      <div class="text"> {{team.description|safe|truncatechars:200}}
+                      <div class="text"> {{team.description|safe|truncatechars:100}}
                         <h2><a href="{% url 'web:team-det' team.id %}">{{team.name}}</a></h2>
 
                         <div class="designation"> {{team.name1}} </div>
                       <span class="quote-icon flaticon-left-quote-1"></span>
                   </div>
               </div>
-              {% endfor %}
+             
             
               
           </div>
-      </div>
+          {% endfor %}
+        </div>
   </section>
   <!--End Testimonial Section-->
   
