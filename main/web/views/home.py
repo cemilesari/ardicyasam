@@ -38,7 +38,7 @@ class HomeView(View):
         categories2 = ProductCategoryTR.objects.all().order_by('ordering')[9:10]
 
         
-        teams = Teams.objects.all().order_by('ordering')[:3]
+        teams = Teams.objects.all().order_by('ordering')
 
         cat3 = ProductCategoryTR.objects.all()[:3]
 
