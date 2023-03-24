@@ -12,7 +12,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 
     
-	<title>{% block title %}{% trans "Home" %}{% endblock title %}</title>
+	<title>{% block title %}{% trans "Ardıç Yaşam" %}{% endblock title %}</title>
     {% block meta %}{% endblock meta %}
     <link href="{% static 'web/css/bootstrap.css' %}" rel="stylesheet">
     <link href="{% static 'web/plugins/revolution/css/settings.css' %}" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
@@ -20,7 +20,7 @@
     <link href="{% static 'web/plugins/revolution/css/navigation.css' %}" rel="stylesheet" type="text/css"><!-- REVOLUTION NAVIGATION STYLES -->
     <link href="{% static 'web/css/style.css' %}" rel="stylesheet">
     <link href="{% static 'web/css/responsive.css' %}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!--Color Switcher Mockup-->
     <link href="{% static 'web/css/color-switcher-design.css' %}" rel="stylesheet">
 
@@ -40,9 +40,23 @@
 <body>
 {% include 'web/includes/header.html' %}
 {% block content %}{% endblock content %}
+
 {% include 'web/includes/footer.html' %}
 
+<div id="circularMenu" class="circular-menu">
 
+    <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
+      <i class="fa fa-commenting-o fa-2x" style="color:#fff;font-size: x-large;" ></i>
+    </a>
+  
+    <menu class="items-wrapper">
+      <a href="#" class="menu-item" style="background-color:#67d473"><img style="width:24px;height:24px;" src="{% static 'web/images/wpp.svg' %}"></a>
+      <a href="#" class="menu-item" style="background-color:#59a9f3"><img style="width:24px;height:24px;"src="{% static 'web/images/face.svg' %}"></a>
+      <a href="#" class="menu-item" style="background-color:#915bbc"><img style="width:24px;height:24px;"src="{% static 'web/images/viber.svg' %}"></a>
+    </menu>
+  
+  </div>
+  
 <script src="{% static  'web/js/jquery.js' %}"></script>
 <!--Revolution Slider-->
 <script src="{% static  'web/plugins/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
