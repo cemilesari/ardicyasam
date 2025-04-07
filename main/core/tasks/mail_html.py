@@ -6,7 +6,6 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 from main.core.mailer import PyMail, PyMailMultiPart
-from main.taskapp.celery import app
 
 """
 kwargs = {

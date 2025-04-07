@@ -7,7 +7,6 @@ from django.utils import timezone
 from django.db.models import Q
 
 from main.users.models import User
-from main.taskapp.celery import DEFAULT_RETRY_DELAY, MAX_RETRIES, revoke_task
 from celery.decorators import task
 from celery.utils.log import get_task_logger
 

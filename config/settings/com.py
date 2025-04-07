@@ -30,7 +30,6 @@ INSTALLED_APPS = [
 
     'main.core',
     'main.notify',
-    'main.taskapp',
     'main.users',
     'main.web',
     'main.aydin',
