@@ -48,3 +48,5 @@ LOGGING = {
         },
     }
 }
+
+USE_TZ=False
